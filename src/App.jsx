@@ -6,6 +6,7 @@ import Innovation from './pages/Innovation';
 import Products from './pages/Products';
 import Resources from './pages/Resources';
 import Careers from './pages/Careers';
+import FooterPage from './pages/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/footer" element={<FooterPage />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,185 @@
+/* Footer Page Responsive Styles */
+
+.footer-section {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.footer-section:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.footer-section:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.footer-section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.footer-section:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.footer-section:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-icon {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-section:last-child {
+    border-bottom: none;
+  }
+
+  /* Newsletter responsive */
+  input[type='email'] {
+    min-width: 100% !important;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  /* Social icons smaller on mobile */
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  /* Bottom footer info responsive */
+  .footer-bottom-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Legal section responsive */
+  [style*='justify-content: space-between'] {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Back to top button smaller on mobile */
+  button[title='Back to top'] {
+    width: 45px;
+    height: 45px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  input[type='email'] {
+    min-width: 250px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-section:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 480px) {
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4,
+  h5 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  /* Stack newsletter button on very small screens */
+  div[style*='display: flex'][style*='gap: 0.5rem'] {
+    flex-direction: column;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .footer-section,
+  .social-icon,
+  button {
+    animation: none;
+    transition: none;
+  }
+
+  .social-icon:hover {
+    transform: none;
+  }
+
+  button:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  }
+}
+
+/* Print styles */
+@media print {
+  footer {
+    background: white;
+    color: black;
+  }
+
+  .social-icon,
+  button[title='Back to top'] {
+    display: none;
+  }
+
+  a {
+    color: black;
+  }
+}

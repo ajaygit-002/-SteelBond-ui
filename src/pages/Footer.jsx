@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import '../styles/footer.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Footer = () => {
+const FooterPage = () => {
   useEffect(() => {
     // Animate footer sections on scroll
     gsap.from('.footer-section', {
@@ -13,7 +14,7 @@ const Footer = () => {
       duration: 0.8,
       stagger: 0.15,
       scrollTrigger: {
-        trigger: 'footer',
+        trigger: '.footer-content',
         start: 'top 85%',
       },
     });
@@ -36,33 +37,31 @@ const Footer = () => {
 
   return (
     <footer
-      className="footer"
       style={{
         background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
         color: '#ffffff',
         marginTop: 'auto',
-        width: '100%',
       }}
     >
-      {/* Main Footer Content - Full Width */}
+      {/* Main Footer Content */}
       <div
         className="footer-content"
         style={{
-          width: '100%',
+          maxWidth: '1280px',
+          margin: '0 auto',
           padding: 'clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 5rem)',
         }}
       >
-        {/* Top Section: Brand + Links in Full Width Layout */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'flex-start',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: 'clamp(2rem, 5vw, 4rem)',
             marginBottom: '3rem',
           }}
         >
-          {/* Brand Section - Fixed Width Left */}
-          <div className="footer-section" style={{ flex: '0 0 280px' }}>
+          {/* Brand Section */}
+          <div className="footer-section">
             <div style={{ marginBottom: '1.5rem' }}>
               <div
                 style={{
@@ -137,150 +136,140 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Side - All Links Filling Full Width */}
-          <div
-            style={{
-              flex: 1,
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 'clamp(2rem, 4vw, 3rem)',
-            }}
-          >
-            {/* Quick Links Section */}
-            <div className="footer-section">
-              <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#ffffff',
-                }}
-              >
-                Quick Links
-              </h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {['Home', 'About Us', 'Products', 'Innovation', 'Careers', 'Contact'].map(link => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase()}`}
-                      style={{
-                        color: '#94a3b8',
-                        fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                        transition: 'all 0.3s ease',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.color = '#f97316';
-                        e.target.style.paddingLeft = '0.5rem';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.color = '#94a3b8';
-                        e.target.style.paddingLeft = '0';
-                      }}
-                    >
-                      → {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services Section */}
-            <div className="footer-section">
-              <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#ffffff',
-                }}
-              >
-                Services
-              </h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {[
-                  'Bulk Orders',
-                  'Custom Solutions',
-                  'Technical Support',
-                  'Quality Assurance',
-                  'Logistics',
-                ].map(service => (
-                  <li key={service}>
-                    <a
-                      href={`#${service.toLowerCase()}`}
-                      style={{
-                        color: '#94a3b8',
-                        fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                        transition: 'all 0.3s ease',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.color = '#f97316';
-                        e.target.style.paddingLeft = '0.5rem';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.color = '#94a3b8';
-                        e.target.style.paddingLeft = '0';
-                      }}
-                    >
-                      → {service}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div className="footer-section">
-              <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#ffffff',
-                }}
-              >
-                Contact Us
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div>
-                  <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Email</p>
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h4
+              style={{
+                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                marginBottom: '1.5rem',
+                fontWeight: 600,
+                color: '#ffffff',
+              }}
+            >
+              Quick Links
+            </h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {['Home', 'About Us', 'Products', 'Innovation', 'Careers', 'Contact'].map(link => (
+                <li key={link}>
                   <a
-                    href="mailto:info@steelbond.com"
+                    href={`#${link.toLowerCase()}`}
                     style={{
                       color: '#94a3b8',
                       fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                      transition: 'color 0.3s ease',
-                      wordBreak: 'break-word',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-block',
                     }}
-                    onMouseEnter={(e) => (e.target.style.color = '#f97316')}
-                    onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#f97316';
+                      e.target.style.paddingLeft = '0.5rem';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#94a3b8';
+                      e.target.style.paddingLeft = '0';
+                    }}
                   >
-                    info@steelbond.com
+                    → {link}
                   </a>
-                </div>
-                <div>
-                  <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Phone</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="footer-section">
+            <h4
+              style={{
+                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                marginBottom: '1.5rem',
+                fontWeight: 600,
+                color: '#ffffff',
+              }}
+            >
+              Services
+            </h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                'Bulk Orders',
+                'Custom Solutions',
+                'Technical Support',
+                'Quality Assurance',
+                'Logistics',
+              ].map(service => (
+                <li key={service}>
                   <a
-                    href="tel:+15551234567"
+                    href={`#${service.toLowerCase()}`}
                     style={{
                       color: '#94a3b8',
                       fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                      transition: 'color 0.3s ease',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-block',
                     }}
-                    onMouseEnter={(e) => (e.target.style.color = '#f97316')}
-                    onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#f97316';
+                      e.target.style.paddingLeft = '0.5rem';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#94a3b8';
+                      e.target.style.paddingLeft = '0';
+                    }}
                   >
-                    +1 (555) 123-4567
+                    → {service}
                   </a>
-                </div>
-                <div>
-                  <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Address</p>
-                  <p style={{ color: '#94a3b8', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
-                    Industrial District<br />
-                    City, Country 12345
-                  </p>
-                </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Information */}
+          <div className="footer-section">
+            <h4
+              style={{
+                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
+                marginBottom: '1.5rem',
+                fontWeight: 600,
+                color: '#ffffff',
+              }}
+            >
+              Contact Us
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
+                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Email</p>
+                <a
+                  href="mailto:info@steelbond.com"
+                  style={{
+                    color: '#94a3b8',
+                    fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = '#f97316')}
+                  onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                >
+                  info@steelbond.com
+                </a>
+              </div>
+              <div>
+                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Phone</p>
+                <a
+                  href="tel:+15551234567"
+                  style={{
+                    color: '#94a3b8',
+                    fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                    transition: 'color 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = '#f97316')}
+                  onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                >
+                  +1 (555) 123-4567
+                </a>
+              </div>
+              <div>
+                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Address</p>
+                <p style={{ color: '#94a3b8', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
+                  Industrial District
+                  <br />
+                  City, Country 12345
+                </p>
               </div>
             </div>
           </div>
@@ -547,4 +536,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterPage;
