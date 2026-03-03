@@ -1,0 +1,232 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: -clamp(60px, 8vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  z-index: 2;
+}
+
+/* Industrial wire pattern background effect */
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(249, 115, 22, 0.05) 25%, rgba(249, 115, 22, 0.05) 26%, transparent 27%, transparent 74%, rgba(249, 115, 22, 0.05) 75%, rgba(249, 115, 22, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(249, 115, 22, 0.05) 25%, rgba(249, 115, 22, 0.05) 26%, transparent 27%, transparent 74%, rgba(249, 115, 22, 0.05) 75%, rgba(249, 115, 22, 0.05) 76%, transparent 77%, transparent);
+  background-size: 60px 60px;
+  z-index: 2;
+  animation: movePattern 20s linear infinite;
+}
+
+@keyframes movePattern {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60px 60px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-button {
+  padding: 1rem 2.5rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-button.primary {
+  background-color: var(--accent);
+  color: #000;
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+}
+
+.hero-button.primary:hover {
+  background-color: var(--accent-dark);
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+  transform: translateY(-2px);
+}
+
+.hero-button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.hero-button.secondary:hover {
+  background-color: var(--accent);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 2;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .hero {
+    height: calc(100vh - 60px);
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-cta {
+    gap: 1rem;
+  }
+}
+
+/* Parallax Background */
+.hero-background.parallax {
+  position: fixed;
+  height: 120%;
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-title {
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.4s;
+}
+
+.hero-cta {
+  animation-delay: 0.6s;
+}
