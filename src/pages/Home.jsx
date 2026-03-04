@@ -2,10 +2,114 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import viBg from '../assets/vi.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
+
+/* ─── Animated Stats Counter (scroll-triggered count-up) ─── */
+const statsData = [
+  { target: 10000, suffix: '+', label: 'Products Delivered', display: '10K' },
+  { target: 500, suffix: '+', label: 'Industrial Clients', display: '500' },
+  { target: 30, suffix: '+', label: 'Years Experience', display: '30' },
+  { target: 99, suffix: '%', label: 'Customer Satisfaction', display: '99' },
+];
+
+const formatNumber = (num) => {
+  if (num >= 1000) return (num / 1000).toFixed(num % 1000 === 0 ? 0 : 1) + 'K';
+  return num.toString();
+};
+
+const StatsCounter = () => {
+  const sectionRef = useRef(null);
+  const countersRef = useRef([]);
+  const hasAnimated = useRef(false);
+
+  const runAnimation = () => {
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    statsData.forEach((stat, i) => {
+      const counter = { val: 0 };
+      gsap.to(counter, {
+        val: stat.target,
+        duration: 2.5,
+        ease: 'power2.out',
+        onUpdate: () => {
+          if (countersRef.current[i]) {
+            countersRef.current[i].textContent =
+              formatNumber(Math.round(counter.val)) + stat.suffix;
+          }
+        },
+      });
+    });
+  };
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    // Check if already in viewport on mount (e.g. page refresh while scrolled)
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.85) {
+      runAnimation();
+    }
+
+    const trigger = ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: runAnimation,
+    });
+
+    return () => trigger.kill();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="section"
+      style={{
+        background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <div className="container">
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '2rem',
+            textAlign: 'center',
+          }}
+        >
+          {statsData.map((stat, index) => (
+            <div
+              key={index}
+              style={{
+                padding: '2rem',
+              }}
+            >
+              <h3
+                ref={(el) => (countersRef.current[index] = el)}
+                style={{
+                  fontSize: '3rem',
+                  fontWeight: 700,
+                  color: '#f97316',
+                  marginBottom: '0.5rem',
+                  fontVariantNumeric: 'tabular-nums',
+                }}
+              >
+                0
+              </h3>
+              <p style={{ color: '#94a3b8' }}>{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Home = () => {
   useEffect(() => {
@@ -358,52 +462,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section
-        className="section"
-        style={{
-          background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '2rem',
-              textAlign: 'center',
-            }}
-          >
-            {[
-              { number: '10K+', label: 'Products Delivered' },
-              { number: '500+', label: 'Industrial Clients' },
-              { number: '30+', label: 'Years Experience' },
-              { number: '99%', label: 'Customer Satisfaction' },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                style={{
-                  padding: '2rem',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: '3rem',
-                    fontWeight: 700,
-                    color: '#f97316',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  {stat.number}
-                </h3>
-                <p style={{ color: '#94a3b8' }}>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Stats Section - Animated Counters */}
+      <StatsCounter />
 
       {/* Our Products Showcase */}
       <section

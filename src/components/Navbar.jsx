@@ -16,6 +16,7 @@ const Navbar = () => {
     { label: 'Our Products', path: '/products', id: 'products' },
     { label: 'Resources', path: '/resources', id: 'resources' },
     { label: 'Careers', path: '/careers', id: 'careers' },
+    { label: 'Contact Us', path: '/contact', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <nav className={`navbar`}>
         <div className="navbar-container">
           {/* Brand */}
           <div className="navbar-brand" onClick={handleLogoClick}>
@@ -81,8 +82,12 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Contact Us Button */}
-          <button className="nav-contact-btn" onClick={() => handleNavClick('/contact', 'contact')}>
+          {/* Desktop Contact - moved into nav links; keep for accessibility on wide screens */}
+          <button
+            className="nav-contact-btn"
+            onClick={() => handleNavClick('/contact', 'contact')}
+            aria-label="Contact Us"
+          >
             Contact Us
           </button>
 

@@ -13,9 +13,10 @@
 }
 
 .navbar.scrolled {
-  background-color: transparent;
-  backdrop-filter: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Keep same look when scrolled so navbar appears fixed and consistent */
+  background-color: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 /* Navbar Container */

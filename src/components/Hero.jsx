@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LiquidEther from './LiquidEther';
 import '../styles/hero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +65,27 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="hero-background"></div>
+      {/* LiquidEther WebGL background */}
+      <div className="hero-background">
+        <LiquidEther
+          colors={['#f97316', '#ec4899', '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b']}
+          mouseForce={20}
+          cursorSize={100}
+          isViscous
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={3000}
+          autoRampDuration={0.6}
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
       <div className="hero-pattern"></div>
       <div className="hero-overlay"></div>
 
