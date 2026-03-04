@@ -7,6 +7,8 @@ import Products from './pages/Products';
 import Resources from './pages/Resources';
 import Careers from './pages/Careers';
 import FooterPage from './pages/Footer';
+import ExploreMore from './pages/ExploreMore';
+import LearnMore from './pages/LearnMore';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/footer" element={<FooterPage />} />
+        <Route path="/explore-more" element={<ExploreMore />} />
+        <Route path="/learn-more" element={<LearnMore />} />
       </Routes>
     </Router>
   );

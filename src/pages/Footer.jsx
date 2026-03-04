@@ -236,7 +236,7 @@ const FooterPage = () => {
               <div>
                 <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Email</p>
                 <a
-                  href="mailto:info@steelbond.com"
+                  href="mailto:info@steelbondwires.com"
                   style={{
                     color: '#94a3b8',
                     fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
@@ -245,7 +245,7 @@ const FooterPage = () => {
                   onMouseEnter={(e) => (e.target.style.color = '#f97316')}
                   onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
                 >
-                  info@steelbond.com
+                  info@steelbondwires.com
                 </a>
               </div>
               <div>

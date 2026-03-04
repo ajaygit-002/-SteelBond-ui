@@ -59,7 +59,7 @@ const Navbar = () => {
           {/* Brand */}
           <div className="navbar-brand" onClick={handleLogoClick}>
             <div className="navbar-logo">SB</div>
-            <span className="navbar-text">SteelBond</span>
+            <span className="navbar-text">SteelBond Wires</span>
           </div>
 
           {/* Desktop Menu */}
@@ -80,6 +80,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          {/* Contact Us Button */}
+          <button className="nav-contact-btn" onClick={() => handleNavClick('/contact', 'contact')}>
+            Contact Us
+          </button>
 
           {/* Hamburger Menu */}
           <button
@@ -125,6 +130,9 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <button className="nav-contact-btn-mobile" onClick={() => handleNavClick('/contact', 'contact')}>
+            Contact Us
+          </button>
         </nav>
       </div>
     </>
