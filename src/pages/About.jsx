@@ -25,7 +25,7 @@ const About = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -36,19 +36,19 @@ const About = () => {
                 margin: '0 auto',
               }}
             >
-              <h1 style={{ fontSize: '3rem', marginBottom: '2rem' }}>About Us</h1>
-              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem' }}>
+              <h1 style={{ fontSize: '3rem', marginBottom: '2rem', color: '#000000' }}>About Us</h1>
+              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: '#000000' }}>
                 SteelBond Wires has been a trusted leader in the wire manufacturing
                 industry for over three decades. Founded with a vision to provide
                 premium, reliable wire solutions, we have grown into a global powerhouse
                 serving industries worldwide.
               </p>
-              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: '#000000' }}>
                 Our commitment to excellence, innovation, and customer satisfaction
                 has made us the preferred choice for industrial and manufacturing
                 sectors globally.
               </p>
-              <p style={{ fontSize: '1.125rem' }}>
+              <p style={{ fontSize: '1.125rem', color: '#000000' }}>
                 We combine modern manufacturing techniques with decades of expertise
                 to deliver products that exceed expectations and withstand the most
                 demanding applications.
@@ -58,7 +58,7 @@ const About = () => {
         </section>
 
         {/* Values Section */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Our Core Values</h2>
             <div
@@ -77,17 +77,17 @@ const About = () => {
                 <div
                   key={index}
                   style={{
-                    background: 'rgba(249, 115, 22, 0.1)',
+                    background: 'rgba(0, 0, 0, 0.06)',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     textAlign: 'center',
                   }}
                 >
-                  <h3 style={{ color: '#f97316', marginBottom: '1rem' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '1rem' }}>
                     {value.title}
                   </h3>
-                  <p style={{ color: '#94a3b8' }}>{value.description}</p>
+                  <p style={{ color: '#475569' }}>{value.description}</p>
                 </div>
               ))}
             </div>
@@ -98,7 +98,7 @@ const About = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -139,15 +139,15 @@ const About = () => {
                   <div
                     key={index}
                     style={{
-                      background: 'rgba(249, 115, 22, 0.1)',
+                      background: 'rgba(0, 0, 0, 0.06)',
                       padding: '1.5rem',
                       borderRadius: '12px',
-                      border: '1px solid rgba(249, 115, 22, 0.2)',
+                      border: '1px solid #e2e8f0',
                       textAlign: 'center',
                     }}
                   >
-                    <h3 style={{ color: '#f97316', fontSize: '1.5rem' }}>{item.number}</h3>
-                    <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{item.label}</p>
+                    <h3 style={{ color: '#111111', fontSize: '1.5rem' }}>{item.number}</h3>
+                    <p style={{ color: '#475569', fontSize: '0.9rem' }}>{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -156,7 +156,7 @@ const About = () => {
         </section>
 
         {/* Our Journey Timeline */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Our Journey</h2>
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -176,17 +176,17 @@ const About = () => {
                     alignItems: 'flex-start',
                     marginBottom: '2rem',
                     padding: '1.5rem',
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.15)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
+                    e.currentTarget.style.borderColor = '#111111';
                     e.currentTarget.style.transform = 'translateX(10px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.15)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -194,12 +194,12 @@ const About = () => {
                     style={{
                       minWidth: '70px',
                       height: '70px',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: '#ffedd5',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#f97316',
+                      color: '#111111',
                       fontWeight: 700,
                       fontSize: '1rem',
                     }}
@@ -207,8 +207,8 @@ const About = () => {
                     {item.year}
                   </div>
                   <div>
-                    <h3 style={{ color: '#f97316', marginBottom: '0.5rem', fontSize: '1.15rem' }}>{item.title}</h3>
-                    <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{item.desc}</p>
+                    <h3 style={{ color: '#111111', marginBottom: '0.5rem', fontSize: '1.15rem' }}>{item.title}</h3>
+                    <p style={{ color: '#475569', fontSize: '0.95rem' }}>{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -220,7 +220,7 @@ const About = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -234,10 +234,10 @@ const About = () => {
               }}
             >
               {[
-                { img: 'linear-gradient(135deg, #f97316 0%, #dc2626 100%)', title: 'Wire Drawing Plant', desc: '20+ high-speed wire drawing machines with PLC automation' },
-                { img: 'linear-gradient(135deg, #ea580c 0%, #b91c1c 100%)', title: 'Insulation Line', desc: 'Continuous vulcanization lines for PVC, XLPE & FRLS insulation' },
-                { img: 'linear-gradient(135deg, #d97706 0%, #ea580c 100%)', title: 'Testing Laboratory', desc: 'NABL-accredited lab with advanced HV & mechanical testing equipment' },
-                { img: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)', title: 'Warehouse & Logistics', desc: '50,000 sq ft storage with GPS-tracked delivery fleet' },
+                { img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)', title: 'Wire Drawing Plant', desc: '20+ high-speed wire drawing machines with PLC automation' },
+                { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Insulation Line', desc: 'Continuous vulcanization lines for PVC, XLPE & FRLS insulation' },
+                { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Testing Laboratory', desc: 'NABL-accredited lab with advanced HV & mechanical testing equipment' },
+                { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Warehouse & Logistics', desc: '50,000 sq ft storage with GPS-tracked delivery fleet' },
                 { img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)', title: 'Quality Control Hub', desc: 'In-line quality checks with Six Sigma methodology' },
                 { img: 'linear-gradient(135deg, #b45309 0%, #dc2626 100%)', title: 'Solar Power Unit', desc: '500KW rooftop solar installation powering 40% of production' },
               ].map((item, index) => (
@@ -246,12 +246,12 @@ const About = () => {
                   style={{
                     borderRadius: '12px',
                     overflow: 'hidden',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-5px)';
-                    e.currentTarget.style.boxShadow = '0 15px 30px rgba(249, 115, 22, 0.15)';
+                    e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.08)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
@@ -274,8 +274,8 @@ const About = () => {
                   >
                     {item.title}
                   </div>
-                  <div style={{ padding: '1.25rem', background: '#1e293b' }}>
-                    <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{item.desc}</p>
+                  <div style={{ padding: '1.25rem', background: '#f1f5f9' }}>
+                    <p style={{ color: '#475569', fontSize: '0.95rem' }}>{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -284,7 +284,7 @@ const About = () => {
         </section>
 
         {/* Leadership Team */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Our Leadership</h2>
             <div
@@ -303,10 +303,10 @@ const About = () => {
                 <div
                   key={index}
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                   }}
@@ -316,7 +316,7 @@ const About = () => {
                       width: '80px',
                       height: '80px',
                       borderRadius: '50%',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: '#ffedd5',
                       margin: '0 auto 1rem',
                       display: 'flex',
                       alignItems: 'center',
@@ -326,9 +326,9 @@ const About = () => {
                   >
                     👤
                   </div>
-                  <h3 style={{ color: '#f97316', marginBottom: '0.25rem' }}>{member.name}</h3>
-                  <p style={{ color: '#e2e8f0', fontSize: '0.9rem', marginBottom: '0.75rem' }}>{member.role}</p>
-                  <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{member.desc}</p>
+                  <h3 style={{ color: '#111111', marginBottom: '0.25rem' }}>{member.name}</h3>
+                  <p style={{ color: '#1e293b', fontSize: '0.9rem', marginBottom: '0.75rem' }}>{member.role}</p>
+                  <p style={{ color: '#475569', fontSize: '0.85rem' }}>{member.desc}</p>
                 </div>
               ))}
             </div>

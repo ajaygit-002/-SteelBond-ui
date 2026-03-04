@@ -29,7 +29,7 @@ const Innovation = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -51,7 +51,7 @@ const Innovation = () => {
         </section>
 
         {/* Quality Standards */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Quality Standards</h2>
             <div
@@ -84,27 +84,27 @@ const Innovation = () => {
                   key={index}
                   className="innovation-card"
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2.5rem 2rem',
                     borderRadius: '12px',
-                    border: '2px solid rgba(249, 115, 22, 0.2)',
+                    border: '2px solid rgba(0, 0, 0, 0.1)',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
+                    e.currentTarget.style.borderColor = '#111111';
                     e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(249, 115, 22, 0.2)';
+                      '0 0 30px rgba(0, 0, 0, 0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <h3 style={{ color: '#f97316', marginBottom: '0.75rem' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '0.75rem' }}>
                     {cert.standard}
                   </h3>
-                  <p style={{ color: '#94a3b8' }}>{cert.description}</p>
+                  <p style={{ color: '#475569' }}>{cert.description}</p>
                 </div>
               ))}
             </div>
@@ -115,7 +115,7 @@ const Innovation = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -137,14 +137,14 @@ const Innovation = () => {
               </p>
               <div
                 style={{
-                  background: 'rgba(249, 115, 22, 0.1)',
+                  background: 'rgba(0, 0, 0, 0.06)',
                   padding: '2rem',
                   borderRadius: '12px',
-                  border: '1px solid rgba(249, 115, 22, 0.2)',
+                  border: '1px solid #e2e8f0',
                   marginTop: '2rem',
                 }}
               >
-                <p style={{ color: '#f97316', fontWeight: 600 }}>
+                <p style={{ color: '#111111', fontWeight: 600 }}>
                   ✓ 50+ Patents Held | ✓ 15+ Industry Awards | ✓ 100+ Research Projects
                 </p>
               </div>
@@ -156,7 +156,7 @@ const Innovation = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -174,7 +174,7 @@ const Innovation = () => {
               <div
                 style={{
                   height: '300px',
-                  background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                  background: 'linear-gradient(135deg, #d4d4d4 0%, #333333 100%)',
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -185,11 +185,11 @@ const Innovation = () => {
                 🔬
               </div>
               <div>
-                <h3 style={{ color: '#f97316', marginBottom: '1rem', fontSize: '1.5rem' }}>Advanced Material Science</h3>
-                <p style={{ color: '#94a3b8', lineHeight: '1.8', marginBottom: '1rem' }}>
+                <h3 style={{ color: '#111111', marginBottom: '1rem', fontSize: '1.5rem' }}>Advanced Material Science</h3>
+                <p style={{ color: '#475569', lineHeight: '1.8', marginBottom: '1rem' }}>
                   Our R&D lab uses spectroscopy, electron microscopy, and tensile analysis to engineer copper alloys with optimal conductivity-to-strength ratios.
                 </p>
-                <p style={{ color: '#94a3b8', lineHeight: '1.8' }}>
+                <p style={{ color: '#475569', lineHeight: '1.8' }}>
                   Every batch undergoes 12+ quality parameters before reaching the production floor.
                 </p>
               </div>
@@ -204,18 +204,18 @@ const Innovation = () => {
               }}
             >
               <div>
-                <h3 style={{ color: '#f97316', marginBottom: '1rem', fontSize: '1.5rem' }}>Smart Manufacturing</h3>
-                <p style={{ color: '#94a3b8', lineHeight: '1.8', marginBottom: '1rem' }}>
+                <h3 style={{ color: '#111111', marginBottom: '1rem', fontSize: '1.5rem' }}>Smart Manufacturing</h3>
+                <p style={{ color: '#475569', lineHeight: '1.8', marginBottom: '1rem' }}>
                   Industry 4.0 enabled production lines with IoT sensors monitoring temperature, tension, and speed in real-time.
                 </p>
-                <p style={{ color: '#94a3b8', lineHeight: '1.8' }}>
+                <p style={{ color: '#475569', lineHeight: '1.8' }}>
                   Automated quality gates detect deviations of 0.01mm, ensuring zero-defect output.
                 </p>
               </div>
               <div
                 style={{
                   height: '300px',
-                  background: 'linear-gradient(135deg, #ea580c 0%, #dc2626 100%)',
+                  background: 'linear-gradient(135deg, #bfbfbf 0%, #222222 100%)',
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -230,7 +230,7 @@ const Innovation = () => {
         </section>
 
         {/* Testing Lab */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Testing & Quality Lab</h2>
             <div
@@ -252,25 +252,25 @@ const Innovation = () => {
                 <div
                   key={index}
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     textAlign: 'center',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
+                    e.currentTarget.style.borderColor = '#111111';
                     e.currentTarget.style.transform = 'translateY(-5px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
                   <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{test.icon}</div>
-                  <h3 style={{ color: '#f97316', marginBottom: '0.75rem', fontSize: '1.1rem' }}>{test.title}</h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{test.desc}</p>
+                  <h3 style={{ color: '#111111', marginBottom: '0.75rem', fontSize: '1.1rem' }}>{test.title}</h3>
+                  <p style={{ color: '#475569', fontSize: '0.9rem' }}>{test.desc}</p>
                 </div>
               ))}
             </div>
@@ -278,7 +278,7 @@ const Innovation = () => {
         </section>
 
         {/* Manufacturing Process */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Our Manufacturing Process</h2>
             <div
@@ -304,21 +304,21 @@ const Innovation = () => {
                     gap: '1.5rem',
                     alignItems: 'flex-start',
                     padding: '1.5rem',
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.15)',
+                    border: '1px solid #e2e8f0',
                   }}
                 >
                   <div
                     style={{
                       minWidth: '50px',
                       height: '50px',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: '#ffedd5',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#f97316',
+                      color: '#111111',
                       fontWeight: 700,
                       fontSize: '1.1rem',
                     }}
@@ -326,8 +326,8 @@ const Innovation = () => {
                     {item.step}
                   </div>
                   <div>
-                    <h3 style={{ color: '#f97316', marginBottom: '0.5rem', fontSize: '1.1rem' }}>{item.title}</h3>
-                    <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{item.desc}</p>
+                    <h3 style={{ color: '#111111', marginBottom: '0.5rem', fontSize: '1.1rem' }}>{item.title}</h3>
+                    <p style={{ color: '#475569', fontSize: '0.95rem' }}>{item.desc}</p>
                   </div>
                 </div>
               ))}

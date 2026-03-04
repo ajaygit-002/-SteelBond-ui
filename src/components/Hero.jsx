@@ -68,7 +68,7 @@ const Hero = () => {
       {/* LiquidEther WebGL background */}
       <div className="hero-background">
         <LiquidEther
-          colors={['#f97316', '#ec4899', '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b']}
+          colors={['#ffffff', '#cccccc', '#999999', '#666666', '#333333', '#111111']}
           mouseForce={20}
           cursorSize={100}
           isViscous

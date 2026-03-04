@@ -68,7 +68,7 @@ const Careers = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -82,7 +82,7 @@ const Careers = () => {
         </section>
 
         {/* Culture Section */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Why Work With Us</h2>
             <div
@@ -121,17 +121,17 @@ const Careers = () => {
                 <div
                   key={index}
                   style={{
-                    background: 'rgba(249, 115, 22, 0.1)',
+                    background: 'rgba(0, 0, 0, 0.06)',
                     padding: '1.5rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     textAlign: 'center',
                   }}
                 >
-                  <h3 style={{ color: '#f97316', marginBottom: '0.75rem' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '0.75rem' }}>
                     {benefit.title}
                   </h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>
+                  <p style={{ color: '#475569', fontSize: '0.95rem' }}>
                     {benefit.description}
                   </p>
                 </div>
@@ -144,7 +144,7 @@ const Careers = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -162,28 +162,28 @@ const Careers = () => {
                   key={index}
                   className="job-card"
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     display: 'flex',
                     flexDirection: 'column',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
+                    e.currentTarget.style.borderColor = '#111111';
                     e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(249, 115, 22, 0.2)';
+                      '0 0 30px rgba(0, 0, 0, 0.1)';
                     e.currentTarget.style.transform = 'translateY(-5px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = 'none';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <h3 style={{ color: '#f97316', marginBottom: '1rem' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '1rem' }}>
                     {job.title}
                   </h3>
                   <div
@@ -192,27 +192,27 @@ const Careers = () => {
                       flex: 1,
                     }}
                   >
-                    <p style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>
-                      <span style={{ color: '#f97316', fontWeight: 600 }}>
+                    <p style={{ color: '#475569', marginBottom: '0.5rem' }}>
+                      <span style={{ color: '#111111', fontWeight: 600 }}>
                         Department:
                       </span>{' '}
                       {job.department}
                     </p>
-                    <p style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>
-                      <span style={{ color: '#f97316', fontWeight: 600 }}>
+                    <p style={{ color: '#475569', marginBottom: '0.5rem' }}>
+                      <span style={{ color: '#111111', fontWeight: 600 }}>
                         Location:
                       </span>{' '}
                       {job.location}
                     </p>
-                    <p style={{ color: '#94a3b8' }}>
-                      <span style={{ color: '#f97316', fontWeight: 600 }}>Type:</span>{' '}
+                    <p style={{ color: '#475569' }}>
+                      <span style={{ color: '#111111', fontWeight: 600 }}>Type:</span>{' '}
                       {job.type}
                     </p>
                   </div>
                   <button
                     style={{
-                      background: '#f97316',
-                      color: '#000',
+                      background: '#111111',
+                      color: '#ffffff',
                       border: 'none',
                       padding: '0.75rem 1.5rem',
                       fontSize: '0.875rem',
@@ -222,10 +222,10 @@ const Careers = () => {
                       transition: 'all 0.3s ease',
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.background = '#ea580c';
+                      e.target.style.background = '#333333';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.background = '#f97316';
+                      e.target.style.background = '#111111';
                     }}
                   >
                     Apply Now
@@ -240,7 +240,7 @@ const Careers = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -254,10 +254,10 @@ const Careers = () => {
               }}
             >
               {[
-                { img: 'linear-gradient(135deg, #f97316 0%, #dc2626 100%)', title: 'Annual Day Celebration', icon: '🎉' },
-                { img: 'linear-gradient(135deg, #ea580c 0%, #b91c1c 100%)', title: 'Team Building Events', icon: '🤝' },
-                { img: 'linear-gradient(135deg, #d97706 0%, #ea580c 100%)', title: 'Training Programs', icon: '📚' },
-                { img: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)', title: 'Sports & Recreation', icon: '🏏' },
+                { img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)', title: 'Annual Day Celebration', icon: '🎉' },
+                { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Team Building Events', icon: '🤝' },
+                { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Training Programs', icon: '📚' },
+                { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Sports & Recreation', icon: '🏏' },
                 { img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)', title: 'Community Service', icon: '❤️' },
                 { img: 'linear-gradient(135deg, #b45309 0%, #dc2626 100%)', title: 'Award Ceremonies', icon: '🏆' },
               ].map((item, index) => (
@@ -266,13 +266,13 @@ const Careers = () => {
                   style={{
                     borderRadius: '12px',
                     overflow: 'hidden',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(249, 115, 22, 0.15)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
@@ -291,8 +291,8 @@ const Careers = () => {
                   >
                     {item.icon}
                   </div>
-                  <div style={{ padding: '1.25rem', background: '#1e293b', textAlign: 'center' }}>
-                    <h3 style={{ color: '#e2e8f0', fontSize: '1.05rem' }}>{item.title}</h3>
+                  <div style={{ padding: '1.25rem', background: '#f1f5f9', textAlign: 'center' }}>
+                    <h3 style={{ color: '#1e293b', fontSize: '1.05rem' }}>{item.title}</h3>
                   </div>
                 </div>
               ))}
@@ -301,7 +301,7 @@ const Careers = () => {
         </section>
 
         {/* Hiring Process */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Our Hiring Process</h2>
             <div
@@ -327,21 +327,21 @@ const Careers = () => {
                     gap: '1.5rem',
                     alignItems: 'flex-start',
                     padding: '1.5rem',
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.15)',
+                    border: '1px solid #e2e8f0',
                   }}
                 >
                   <div
                     style={{
                       minWidth: '50px',
                       height: '50px',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: '#ffedd5',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#f97316',
+                      color: '#111111',
                       fontWeight: 700,
                       fontSize: '1.1rem',
                     }}
@@ -349,8 +349,8 @@ const Careers = () => {
                     {item.step}
                   </div>
                   <div>
-                    <h3 style={{ color: '#f97316', marginBottom: '0.5rem', fontSize: '1.1rem' }}>{item.title}</h3>
-                    <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{item.desc}</p>
+                    <h3 style={{ color: '#111111', marginBottom: '0.5rem', fontSize: '1.1rem' }}>{item.title}</h3>
+                    <p style={{ color: '#475569', fontSize: '0.95rem' }}>{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -362,7 +362,7 @@ const Careers = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
             textAlign: 'center',
           }}
         >
@@ -373,8 +373,8 @@ const Careers = () => {
             </p>
             <button
               style={{
-                background: '#f97316',
-                color: '#000',
+                background: '#111111',
+                color: '#ffffff',
                 border: 'none',
                 padding: '1rem 2.5rem',
                 fontSize: '1rem',
@@ -384,11 +384,11 @@ const Careers = () => {
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = '#ea580c';
-                e.target.style.boxShadow = '0 0 30px rgba(249, 115, 22, 0.4)';
+                e.target.style.background = '#333333';
+                e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#f97316';
+                e.target.style.background = '#111111';
                 e.target.style.boxShadow = 'none';
               }}
             >
@@ -398,7 +398,7 @@ const Careers = () => {
         </section>
 
         {/* Employee Testimonials */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">What Our Team Says</h2>
             <div
@@ -429,18 +429,18 @@ const Careers = () => {
                 <div
                   key={index}
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                   }}
                 >
-                  <p style={{ color: '#94a3b8', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.8' }}>
+                  <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.8' }}>
                     "{testimonial.quote}"
                   </p>
-                  <div style={{ borderTop: '1px solid rgba(249, 115, 22, 0.2)', paddingTop: '1rem' }}>
-                    <p style={{ color: '#f97316', fontWeight: 600 }}>{testimonial.name}</p>
-                    <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{testimonial.role}</p>
+                  <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.1)', paddingTop: '1rem' }}>
+                    <p style={{ color: '#111111', fontWeight: 600 }}>{testimonial.name}</p>
+                    <p style={{ color: '#475569', fontSize: '0.85rem' }}>{testimonial.role}</p>
                   </div>
                 </div>
               ))}

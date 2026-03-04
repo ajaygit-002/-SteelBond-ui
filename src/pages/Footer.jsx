@@ -38,8 +38,8 @@ const FooterPage = () => {
   return (
     <footer
       style={{
-        background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-        color: '#ffffff',
+        background: '#ffffff',
+        color: '#1e293b',
         marginTop: 'auto',
       }}
     >
@@ -67,7 +67,7 @@ const FooterPage = () => {
                 style={{
                   width: '50px',
                   height: '50px',
-                  background: 'linear-gradient(135deg, #f97316, #ff6b35)',
+                  background: 'linear-gradient(135deg, #222222, #444444)',
                   borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',
@@ -84,7 +84,7 @@ const FooterPage = () => {
               </h3>
               <p
                 style={{
-                  color: '#94a3b8',
+                  color: '#475569',
                   fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                   lineHeight: '1.6',
                   marginBottom: '1.5rem',
@@ -105,25 +105,25 @@ const FooterPage = () => {
                   style={{
                     width: '40px',
                     height: '40px',
-                    background: 'rgba(249, 115, 22, 0.2)',
-                    border: '1px solid rgba(249, 115, 22, 0.3)',
+                    background: 'rgba(0, 0, 0, 0.1)',
+                    border: '1px solid #e2e8f0',
                     borderRadius: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#f97316',
+                    color: '#111111',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     fontSize: '1.25rem',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#f97316';
+                    e.currentTarget.style.background = '#111111';
                     e.currentTarget.style.color = '#000';
                     e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(249, 115, 22, 0.2)';
-                    e.currentTarget.style.color = '#f97316';
+                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.1)';
+                    e.currentTarget.style.color = '#111111';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -143,7 +143,7 @@ const FooterPage = () => {
                 fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
                 marginBottom: '1.5rem',
                 fontWeight: 600,
-                color: '#ffffff',
+                color: '#1e293b',
               }}
             >
               Quick Links
@@ -154,17 +154,17 @@ const FooterPage = () => {
                   <a
                     href={`#${link.toLowerCase()}`}
                     style={{
-                      color: '#94a3b8',
+                      color: '#475569',
                       fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                       transition: 'all 0.3s ease',
                       display: 'inline-block',
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.color = '#f97316';
+                      e.target.style.color = '#111111';
                       e.target.style.paddingLeft = '0.5rem';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.color = '#94a3b8';
+                      e.target.style.color = '#475569';
                       e.target.style.paddingLeft = '0';
                     }}
                   >
@@ -182,7 +182,7 @@ const FooterPage = () => {
                 fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
                 marginBottom: '1.5rem',
                 fontWeight: 600,
-                color: '#ffffff',
+                color: '#1e293b',
               }}
             >
               Services
@@ -199,17 +199,17 @@ const FooterPage = () => {
                   <a
                     href={`#${service.toLowerCase()}`}
                     style={{
-                      color: '#94a3b8',
+                      color: '#475569',
                       fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                       transition: 'all 0.3s ease',
                       display: 'inline-block',
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.color = '#f97316';
+                      e.target.style.color = '#111111';
                       e.target.style.paddingLeft = '0.5rem';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.color = '#94a3b8';
+                      e.target.style.color = '#475569';
                       e.target.style.paddingLeft = '0';
                     }}
                   >
@@ -227,45 +227,45 @@ const FooterPage = () => {
                 fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
                 marginBottom: '1.5rem',
                 fontWeight: 600,
-                color: '#ffffff',
+                color: '#1e293b',
               }}
             >
               Contact Us
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
-                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Email</p>
+                <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem' }}>Email</p>
                 <a
                   href="mailto:info@steelbondwires.com"
                   style={{
-                    color: '#94a3b8',
+                    color: '#475569',
                     fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = '#f97316')}
-                  onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                  onMouseEnter={(e) => (e.target.style.color = '#111111')}
+                  onMouseLeave={(e) => (e.target.style.color = '#475569')}
                 >
                   info@steelbondwires.com
                 </a>
               </div>
               <div>
-                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Phone</p>
+                <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem' }}>Phone</p>
                 <a
                   href="tel:+15551234567"
                   style={{
-                    color: '#94a3b8',
+                    color: '#475569',
                     fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = '#f97316')}
-                  onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                  onMouseEnter={(e) => (e.target.style.color = '#111111')}
+                  onMouseLeave={(e) => (e.target.style.color = '#475569')}
                 >
                   +1 (555) 123-4567
                 </a>
               </div>
               <div>
-                <p style={{ color: '#f97316', fontWeight: 600, marginBottom: '0.25rem' }}>Address</p>
-                <p style={{ color: '#94a3b8', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
+                <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem' }}>Address</p>
+                <p style={{ color: '#475569', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
                   Industrial District
                   <br />
                   City, Country 12345
@@ -279,8 +279,8 @@ const FooterPage = () => {
         <div
           className="footer-section"
           style={{
-            background: 'rgba(249, 115, 22, 0.1)',
-            border: '1px solid rgba(249, 115, 22, 0.3)',
+            background: 'rgba(0, 0, 0, 0.05)',
+            border: '1px solid #e2e8f0',
             borderRadius: '12px',
             padding: 'clamp(1.5rem, 3vw, 2.5rem)',
             marginBottom: '2rem',
@@ -288,14 +288,14 @@ const FooterPage = () => {
         >
           <h3
             style={{
-              color: '#f97316',
+              color: '#111111',
               marginBottom: '0.75rem',
               fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
             }}
           >
             Stay Updated
           </h3>
-          <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>
+          <p style={{ color: '#475569', marginBottom: '1.5rem' }}>
             Subscribe to our newsletter for the latest updates and industry insights.
           </p>
           <div
@@ -313,26 +313,26 @@ const FooterPage = () => {
                 flex: 1,
                 minWidth: '200px',
                 padding: '0.75rem 1rem',
-                backgroundColor: 'rgba(15, 23, 42, 0.5)',
-                border: '1px solid rgba(249, 115, 22, 0.3)',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e2e8f0',
                 borderRadius: '8px',
-                color: '#ffffff',
+                color: '#1e293b',
                 fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                 transition: 'all 0.3s ease',
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = '#f97316';
+                e.target.style.borderColor = '#111111';
                 e.target.style.backgroundColor = 'rgba(15, 23, 42, 0.8)';
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = 'rgba(249, 115, 22, 0.3)';
+                e.target.style.borderColor = 'rgba(0, 0, 0, 0.12)';
                 e.target.style.backgroundColor = 'rgba(15, 23, 42, 0.5)';
               }}
             />
             <button
               style={{
-                background: '#f97316',
-                color: '#000',
+                background: '#111111',
+                color: '#ffffff',
                 border: 'none',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '8px',
@@ -343,11 +343,11 @@ const FooterPage = () => {
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = '#ea580c';
-                e.target.style.boxShadow = '0 0 20px rgba(249, 115, 22, 0.4)';
+                e.target.style.background = '#333333';
+                e.target.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#f97316';
+                e.target.style.background = '#111111';
                 e.target.style.boxShadow = 'none';
               }}
             >
@@ -359,7 +359,7 @@ const FooterPage = () => {
         {/* Bottom Divider */}
         <div
           style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            borderTop: '1px solid #e2e8f0',
             paddingTop: '2rem',
           }}
         >
@@ -376,7 +376,7 @@ const FooterPage = () => {
             <div>
               <h5
                 style={{
-                  color: '#f97316',
+                  color: '#111111',
                   marginBottom: '0.75rem',
                   fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                   fontWeight: 600,
@@ -384,7 +384,7 @@ const FooterPage = () => {
               >
                 Business Hours
               </h5>
-              <ul style={{ listStyle: 'none', color: '#94a3b8', fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)' }}>
+              <ul style={{ listStyle: 'none', color: '#475569', fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)' }}>
                 <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
                 <li>Saturday: 9:00 AM - 4:00 PM</li>
                 <li>Sunday: Closed</li>
@@ -395,7 +395,7 @@ const FooterPage = () => {
             <div>
               <h5
                 style={{
-                  color: '#f97316',
+                  color: '#111111',
                   marginBottom: '0.75rem',
                   fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                   fontWeight: 600,
@@ -414,12 +414,12 @@ const FooterPage = () => {
                   <span
                     key={method}
                     style={{
-                      background: 'rgba(249, 115, 22, 0.1)',
-                      border: '1px solid rgba(249, 115, 22, 0.2)',
+                      background: 'rgba(0, 0, 0, 0.05)',
+                      border: '1px solid #e2e8f0',
                       padding: '0.25rem 0.75rem',
                       borderRadius: '4px',
                       fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
-                      color: '#94a3b8',
+                      color: '#475569',
                     }}
                   >
                     {method}
@@ -432,7 +432,7 @@ const FooterPage = () => {
             <div>
               <h5
                 style={{
-                  color: '#f97316',
+                  color: '#111111',
                   marginBottom: '0.75rem',
                   fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
                   fontWeight: 600,
@@ -440,7 +440,7 @@ const FooterPage = () => {
               >
                 Certifications
               </h5>
-              <p style={{ color: '#94a3b8', fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)' }}>
+              <p style={{ color: '#475569', fontSize: 'clamp(0.8rem, 1.2vw, 0.9rem)' }}>
                 ✓ ISO 9001:2015<br />
                 ✓ ISO 14001:2015<br />
                 ✓ ASTM Certified
@@ -457,7 +457,7 @@ const FooterPage = () => {
               flexWrap: 'wrap',
               gap: '1rem',
               paddingTop: '2rem',
-              borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+              borderTop: '1px solid #e2e8f0',
             }}
           >
             <p
@@ -484,7 +484,7 @@ const FooterPage = () => {
                     fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = '#f97316')}
+                  onMouseEnter={(e) => (e.target.style.color = '#111111')}
                   onMouseLeave={(e) => (e.target.style.color = '#64748b')}
                 >
                   {link}
@@ -504,8 +504,8 @@ const FooterPage = () => {
           right: '2rem',
           width: '50px',
           height: '50px',
-          background: '#f97316',
-          color: '#000',
+          background: '#111111',
+          color: '#ffffff',
           border: 'none',
           borderRadius: '50%',
           cursor: 'pointer',
@@ -514,18 +514,18 @@ const FooterPage = () => {
           justifyContent: 'center',
           fontSize: '1.5rem',
           transition: 'all 0.3s ease',
-          boxShadow: '0 4px 12px rgba(249, 115, 22, 0.3)',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
           zIndex: '999',
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = '#ea580c';
+          e.target.style.background = '#333333';
           e.target.style.transform = 'translateY(-5px)';
-          e.target.style.boxShadow = '0 8px 24px rgba(249, 115, 22, 0.4)';
+          e.target.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)';
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = '#f97316';
+          e.target.style.background = '#111111';
           e.target.style.transform = 'translateY(0)';
-          e.target.style.boxShadow = '0 4px 12px rgba(249, 115, 22, 0.3)';
+          e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.12)';
         }}
         title="Back to top"
         aria-label="Back to top"

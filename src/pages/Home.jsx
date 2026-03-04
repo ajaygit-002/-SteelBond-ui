@@ -69,7 +69,7 @@ const StatsCounter = () => {
       ref={sectionRef}
       className="section"
       style={{
-        background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        background: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -95,14 +95,14 @@ const StatsCounter = () => {
                 style={{
                   fontSize: '3rem',
                   fontWeight: 700,
-                  color: '#f97316',
+                  color: '#111111',
                   marginBottom: '0.5rem',
                   fontVariantNumeric: 'tabular-nums',
                 }}
               >
                 0
               </h3>
-              <p style={{ color: '#94a3b8' }}>{stat.label}</p>
+              <p style={{ color: '#475569' }}>{stat.label}</p>
             </div>
           ))}
         </div>
@@ -188,7 +188,7 @@ const Home = () => {
                   fontWeight: 700,
                   textAlign: 'center',
                   padding: '2rem',
-                  boxShadow: '0 10px 40px rgba(249, 115, 22, 0.2)',
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
                 }}
               >
                 Welcome to SteelBond Wires
@@ -231,7 +231,7 @@ const Home = () => {
               <p
                 style={{
                   fontSize: '1.1rem',
-                  color: '#f97316',
+                  color: '#111111',
                   fontWeight: 600,
                   marginBottom: '2rem',
                   lineHeight: '1.8',
@@ -241,7 +241,7 @@ const Home = () => {
               </p>
               <button
                 style={{
-                  background: '#f97316',
+                  background: '#111111',
                   color: '#ffffff',
                   border: 'none',
                   padding: '0.75rem 2rem',
@@ -252,11 +252,11 @@ const Home = () => {
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#ea580c';
-                  e.target.style.boxShadow = '0 0 30px rgba(249, 115, 22, 0.4)';
+                  e.target.style.background = '#333333';
+                  e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = '#f97316';
+                  e.target.style.background = '#111111';
                   e.target.style.boxShadow = 'none';
                 }}
               >
@@ -342,7 +342,7 @@ const Home = () => {
             <h3
               style={{
                 fontSize: '1.8rem',
-                color: '#f97316',
+                color: '#111111',
                 fontWeight: 700,
               }}
             >
@@ -352,7 +352,7 @@ const Home = () => {
               style={{
                 height: '4px',
                 width: '80px',
-                background: '#f97316',
+                background: '#111111',
                 margin: '1.5rem auto',
                 borderRadius: '2px',
               }}
@@ -375,7 +375,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="section" style={{ background: '#0f172a' }}>
+      <section className="section" style={{ background: '#f8fafc' }}>
         <div className="container">
           <h2 className="section-title">Why Choose SteelBond Wires?</h2>
           <div
@@ -428,21 +428,21 @@ const Home = () => {
                 key={index}
                 className="feature-card"
                 style={{
-                  background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                  background: '#ffffff',
                   padding: '2rem',
                   borderRadius: '12px',
-                  border: '1px solid rgba(249, 115, 22, 0.1)',
+                  border: '1px solid rgba(0, 0, 0, 0.06)',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#f97316';
+                  e.currentTarget.style.borderColor = '#111111';
                   e.currentTarget.style.boxShadow =
-                    '0 0 30px rgba(249, 115, 22, 0.2)';
+                    '0 0 30px rgba(0, 0, 0, 0.1)';
                   e.currentTarget.style.transform = 'translateY(-5px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.06)';
                   e.currentTarget.style.boxShadow = 'none';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
@@ -450,10 +450,10 @@ const Home = () => {
                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
                   {feature.icon}
                 </div>
-                <h3 style={{ marginBottom: '0.75rem', color: '#f97316' }}>
+                <h3 style={{ marginBottom: '0.75rem', color: '#111111' }}>
                   {feature.title}
                 </h3>
-                <p style={{ color: '#94a3b8', lineHeight: '1.6' }}>
+                <p style={{ color: '#475569', lineHeight: '1.6' }}>
                   {feature.description}
                 </p>
               </div>
@@ -469,7 +469,7 @@ const Home = () => {
       <section
         className="section"
         style={{
-          background: '#0f172a',
+          background: '#f8fafc',
         }}
       >
         <div className="container">
@@ -487,25 +487,25 @@ const Home = () => {
                 icon: '🔌',
                 title: 'House Wiring Cables',
                 desc: 'FR, FRLS & ZHFR insulated single & multi-core cables for safe residential wiring.',
-                img: 'linear-gradient(135deg, #f97316 0%, #dc2626 100%)',
+                img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)',
               },
               {
                 icon: '⚡',
                 title: 'Industrial Power Cables',
                 desc: 'Heavy-duty armoured & unarmoured cables rated up to 1100V for factories & plants.',
-                img: 'linear-gradient(135deg, #ea580c 0%, #b91c1c 100%)',
+                img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)',
               },
               {
                 icon: '🚜',
                 title: 'Submersible Pump Cables',
                 desc: 'PVC insulated flat & round cables designed for submersible pump motors used in agriculture.',
-                img: 'linear-gradient(135deg, #d97706 0%, #ea580c 100%)',
+                img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)',
               },
               {
                 icon: '🏗️',
                 title: 'Flexible Cables',
                 desc: 'Multi-strand flexible copper cables for appliances, machinery connections & temporary wiring.',
-                img: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
+                img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)',
               },
               {
                 icon: '🔧',
@@ -517,7 +517,7 @@ const Home = () => {
                 icon: '☀️',
                 title: 'Solar DC Cables',
                 desc: 'UV-resistant, double-insulated cables for solar panel installations with 25-year life.',
-                img: 'linear-gradient(135deg, #f97316 0%, #f59e0b 100%)',
+                img: 'linear-gradient(135deg, #d4d4d4 0%, #555555 100%)',
               },
             ].map((product, index) => (
               <div
@@ -525,13 +525,13 @@ const Home = () => {
                 style={{
                   borderRadius: '12px',
                   overflow: 'hidden',
-                  border: '1px solid rgba(249, 115, 22, 0.2)',
+                  border: '1px solid #e2e8f0',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(249, 115, 22, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
@@ -550,11 +550,11 @@ const Home = () => {
                 >
                   {product.icon}
                 </div>
-                <div style={{ padding: '1.5rem', background: '#1e293b' }}>
-                  <h3 style={{ color: '#f97316', marginBottom: '0.75rem', fontSize: '1.15rem' }}>
+                <div style={{ padding: '1.5rem', background: '#f1f5f9' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '0.75rem', fontSize: '1.15rem' }}>
                     {product.title}
                   </h3>
-                  <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: '1.7' }}>
+                  <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>
                     {product.desc}
                   </p>
                 </div>
@@ -568,7 +568,7 @@ const Home = () => {
       <section
         className="section"
         style={{
-          background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+          background: '#ffffff',
           padding: '4rem 0',
         }}
       >
@@ -594,24 +594,24 @@ const Home = () => {
               <div
                 key={index}
                 style={{
-                  background: 'rgba(249, 115, 22, 0.08)',
+                  background: '#f5f5f5',
                   padding: '1.5rem 1rem',
                   borderRadius: '12px',
-                  border: '1px solid rgba(249, 115, 22, 0.2)',
+                  border: '1px solid #e2e8f0',
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(249, 115, 22, 0.15)';
-                  e.currentTarget.style.borderColor = '#f97316';
+                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.08)';
+                  e.currentTarget.style.borderColor = '#111111';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(249, 115, 22, 0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                  e.currentTarget.style.background = 'rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = '#e2e8f0';
                 }}
               >
                 <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{cert.badge}</div>
-                <h4 style={{ color: '#f97316', marginBottom: '0.25rem', fontSize: '1rem' }}>{cert.label}</h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{cert.sub}</p>
+                <h4 style={{ color: '#111111', marginBottom: '0.25rem', fontSize: '1rem' }}>{cert.label}</h4>
+                <p style={{ color: '#475569', fontSize: '0.8rem' }}>{cert.sub}</p>
               </div>
             ))}
           </div>
@@ -619,7 +619,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section" style={{ background: '#0f172a' }}>
+      <section className="section" style={{ background: '#f8fafc' }}>
         <div className="container">
           <h2 className="section-title">What Our Clients Say</h2>
           <div
@@ -650,22 +650,22 @@ const Home = () => {
               <div
                 key={index}
                 style={{
-                  background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                  background: '#ffffff',
                   padding: '2rem',
                   borderRadius: '12px',
-                  border: '1px solid rgba(249, 115, 22, 0.2)',
+                  border: '1px solid #e2e8f0',
                   position: 'relative',
                 }}
               >
-                <div style={{ fontSize: '3rem', color: 'rgba(249, 115, 22, 0.3)', position: 'absolute', top: '10px', left: '15px' }}>
+                <div style={{ fontSize: '3rem', color: 'rgba(0, 0, 0, 0.12)', position: 'absolute', top: '10px', left: '15px' }}>
                   "
                 </div>
-                <p style={{ color: '#94a3b8', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.8', marginTop: '1rem' }}>
+                <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.8', marginTop: '1rem' }}>
                   {t.quote}
                 </p>
-                <div style={{ borderTop: '1px solid rgba(249, 115, 22, 0.2)', paddingTop: '1rem' }}>
-                  <p style={{ color: '#f97316', fontWeight: 600 }}>{t.name}</p>
-                  <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{t.role}</p>
+                <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.1)', paddingTop: '1rem' }}>
+                  <p style={{ color: '#111111', fontWeight: 600 }}>{t.name}</p>
+                  <p style={{ color: '#475569', fontSize: '0.85rem' }}>{t.role}</p>
                 </div>
               </div>
             ))}
@@ -677,7 +677,7 @@ const Home = () => {
       <section
         className="section"
         style={{
-          background: 'linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%)',
+          background: 'linear-gradient(135deg, #e0e0e0 0%, #666666 50%, #111111 100%)',
           padding: '4rem 0',
           textAlign: 'center',
         }}
@@ -693,7 +693,7 @@ const Home = () => {
             <button
               style={{
                 background: '#ffffff',
-                color: '#f97316',
+                color: '#111111',
                 border: 'none',
                 padding: '1rem 2.5rem',
                 fontSize: '1rem',
@@ -727,7 +727,7 @@ const Home = () => {
               }}
               onMouseEnter={(e) => {
                 e.target.style.background = '#ffffff';
-                e.target.style.color = '#f97316';
+                e.target.style.color = '#111111';
               }}
               onMouseLeave={(e) => {
                 e.target.style.background = 'transparent';

@@ -68,7 +68,7 @@ const ExploreMore = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -83,7 +83,7 @@ const ExploreMore = () => {
         </section>
 
         {/* Explore Grid */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <div
               className="explore-grid"
@@ -98,23 +98,22 @@ const ExploreMore = () => {
                   key={index}
                   className="explore-card"
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     display: 'flex',
                     flexDirection: 'column',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
-                    e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#111111';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
                     e.currentTarget.style.transform = 'translateY(-5px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = 'none';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
@@ -123,7 +122,7 @@ const ExploreMore = () => {
                     style={{
                       width: '50px',
                       height: '50px',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: 'rgba(0, 0, 0, 0.1)',
                       borderRadius: '8px',
                       marginBottom: '1rem',
                       display: 'flex',
@@ -134,20 +133,20 @@ const ExploreMore = () => {
                   >
                     {item.icon}
                   </div>
-                  <h3 style={{ color: '#f97316', marginBottom: '0.75rem' }}>
+                  <h3 style={{ color: '#ffffff', marginBottom: '0.75rem' }}>
                     {item.title}
                   </h3>
-                  <p style={{ color: '#94a3b8', marginBottom: '1rem', flex: 1 }}>
+                  <p style={{ color: '#475569', marginBottom: '1rem', flex: 1 }}>
                     {item.description}
                   </p>
                   <div
                     style={{
                       padding: '1rem',
-                      background: 'rgba(249, 115, 22, 0.05)',
+                      background: 'rgba(0, 0, 0, 0.03)',
                       borderRadius: '8px',
                       fontSize: '0.875rem',
-                      color: '#94a3b8',
-                      borderLeft: '3px solid #f97316',
+                      color: '#475569',
+                      borderLeft: '3px solid #111111',
                     }}
                   >
                     {item.details}
@@ -162,19 +161,19 @@ const ExploreMore = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
             textAlign: 'center',
           }}
         >
           <div className="container">
-            <h2 style={{ marginBottom: '1.5rem' }}>Ready to Partner with Us?</h2>
+            <h2 style={{ marginBottom: '1.5rem', color: '#ffffff' }}>Ready to Partner with Us?</h2>
             <p style={{ fontSize: '1.125rem', marginBottom: '2rem' }}>
               Reach out to our team to learn more about how we can serve your needs
             </p>
             <button
               style={{
-                background: '#f97316',
-                color: '#000',
+                background: '#111111',
+                color: '#ffffff',
                 border: 'none',
                 padding: '1rem 2.5rem',
                 fontSize: '1rem',
@@ -184,11 +183,11 @@ const ExploreMore = () => {
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = '#ea580c';
-                e.target.style.boxShadow = '0 0 30px rgba(249, 115, 22, 0.4)';
+                e.target.style.background = '#333333';
+                e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#f97316';
+                e.target.style.background = '#111111';
                 e.target.style.boxShadow = 'none';
               }}
             >

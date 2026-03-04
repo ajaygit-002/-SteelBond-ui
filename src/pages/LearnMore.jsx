@@ -74,7 +74,7 @@ const LearnMore = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -89,7 +89,7 @@ const LearnMore = () => {
         </section>
 
         {/* Learn Grid */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <div
               className="learn-grid"
@@ -104,23 +104,22 @@ const LearnMore = () => {
                   key={index}
                   className="learn-card"
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     display: 'flex',
                     flexDirection: 'column',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
-                    e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#111111';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
                     e.currentTarget.style.transform = 'translateY(-5px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = 'none';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
@@ -129,7 +128,7 @@ const LearnMore = () => {
                     style={{
                       width: '50px',
                       height: '50px',
-                      background: 'rgba(249, 115, 22, 0.2)',
+                      background: 'rgba(0, 0, 0, 0.1)',
                       borderRadius: '8px',
                       marginBottom: '1rem',
                       display: 'flex',
@@ -142,7 +141,7 @@ const LearnMore = () => {
                   </div>
                   <p
                     style={{
-                      color: '#f97316',
+                      color: '#ffffff',
                       fontSize: '0.75rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.1em',
@@ -151,20 +150,20 @@ const LearnMore = () => {
                   >
                     {item.category}
                   </p>
-                  <h3 style={{ color: '#e2e8f0', marginBottom: '0.75rem' }}>
+                  <h3 style={{ color: '#ffffff', marginBottom: '0.75rem' }}>
                     {item.title}
                   </h3>
-                  <p style={{ color: '#94a3b8', marginBottom: '1rem', flex: 1 }}>
+                  <p style={{ color: '#475569', marginBottom: '1rem', flex: 1 }}>
                     {item.description}
                   </p>
                   <div
                     style={{
                       padding: '1rem',
-                      background: 'rgba(249, 115, 22, 0.05)',
+                      background: 'rgba(0, 0, 0, 0.03)',
                       borderRadius: '8px',
                       fontSize: '0.875rem',
-                      color: '#94a3b8',
-                      borderLeft: '3px solid #f97316',
+                      color: '#475569',
+                      borderLeft: '3px solid #111111',
                     }}
                   >
                     {item.details}
@@ -176,9 +175,9 @@ const LearnMore = () => {
         </section>
 
         {/* Resources Section */}
-        <section className="section" style={{ background: '#1e293b' }}>
+        <section className="section" style={{ background: '#f1f5f9' }}>
           <div className="container">
-            <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>
+            <h2 style={{ marginBottom: '2rem', textAlign: 'center', color: '#ffffff' }}>
               Additional Resources
             </h2>
             <div
@@ -191,45 +190,45 @@ const LearnMore = () => {
               <div
                 style={{
                   padding: '1.5rem',
-                  background: 'rgba(249, 115, 22, 0.1)',
+                  background: 'rgba(0, 0, 0, 0.05)',
                   borderRadius: '8px',
-                  border: '1px solid rgba(249, 115, 22, 0.3)',
+                  border: '1px solid #e2e8f0',
                 }}
               >
-                <h4 style={{ color: '#f97316', marginBottom: '0.5rem' }}>
+                <h4 style={{ color: '#111111', marginBottom: '0.5rem' }}>
                   📄 Whitepapers & Case Studies
                 </h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+                <p style={{ color: '#475569', fontSize: '0.9rem' }}>
                   In-depth analysis and real-world success stories
                 </p>
               </div>
               <div
                 style={{
                   padding: '1.5rem',
-                  background: 'rgba(249, 115, 22, 0.1)',
+                  background: 'rgba(0, 0, 0, 0.05)',
                   borderRadius: '8px',
-                  border: '1px solid rgba(249, 115, 22, 0.3)',
+                  border: '1px solid #e2e8f0',
                 }}
               >
-                <h4 style={{ color: '#f97316', marginBottom: '0.5rem' }}>
+                <h4 style={{ color: '#111111', marginBottom: '0.5rem' }}>
                   🎓 Training & Certifications
                 </h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+                <p style={{ color: '#475569', fontSize: '0.9rem' }}>
                   Professional development programs and certifications
                 </p>
               </div>
               <div
                 style={{
                   padding: '1.5rem',
-                  background: 'rgba(249, 115, 22, 0.1)',
+                  background: 'rgba(0, 0, 0, 0.05)',
                   borderRadius: '8px',
-                  border: '1px solid rgba(249, 115, 22, 0.3)',
+                  border: '1px solid #e2e8f0',
                 }}
               >
-                <h4 style={{ color: '#f97316', marginBottom: '0.5rem' }}>
+                <h4 style={{ color: '#111111', marginBottom: '0.5rem' }}>
                   📞 Expert Consultation
                 </h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+                <p style={{ color: '#475569', fontSize: '0.9rem' }}>
                   Connect with our technical experts for personalized guidance
                 </p>
               </div>
@@ -241,7 +240,7 @@ const LearnMore = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
             textAlign: 'center',
           }}
         >
@@ -252,8 +251,8 @@ const LearnMore = () => {
             </p>
             <button
               style={{
-                background: '#f97316',
-                color: '#000',
+                background: '#111111',
+                color: '#ffffff',
                 border: 'none',
                 padding: '1rem 2.5rem',
                 fontSize: '1rem',
@@ -263,11 +262,11 @@ const LearnMore = () => {
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = '#ea580c';
-                e.target.style.boxShadow = '0 0 30px rgba(249, 115, 22, 0.4)';
+                e.target.style.background = '#333333';
+                e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = '#f97316';
+                e.target.style.background = '#111111';
                 e.target.style.boxShadow = 'none';
               }}
             >

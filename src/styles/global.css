@@ -2,12 +2,12 @@
 
 :root {
   /* Color Palette */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --accent: #f97316;
-  --accent-dark: #ea580c;
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --accent: #111111;
+  --accent-dark: #333333;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
   --text-tertiary: #64748b;
   
   /* Shadows */
@@ -79,6 +79,11 @@ a {
   color: inherit;
 }
 
+/* Section title dark text for white backgrounds */
+.section-title {
+  color: #1e293b;
+}
+
 /* Button Styles */
 .btn {
   display: inline-flex;
@@ -102,7 +107,7 @@ a {
 
 .btn-primary:hover {
   background-color: var(--accent-dark);
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
 }
 

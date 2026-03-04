@@ -29,7 +29,7 @@ const Resources = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -43,7 +43,7 @@ const Resources = () => {
         </section>
 
         {/* Resources Grid */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Available Resources</h2>
             <div
@@ -114,21 +114,21 @@ const Resources = () => {
                   key={index}
                   className="resource-item"
                   style={{
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     padding: '2rem',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.2)',
+                    border: '1px solid #e2e8f0',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#f97316';
+                    e.currentTarget.style.borderColor = '#111111';
                     e.currentTarget.style.boxShadow =
-                      '0 0 30px rgba(249, 115, 22, 0.2)';
+                      '0 0 30px rgba(0, 0, 0, 0.1)';
                     e.currentTarget.style.transform = 'translateX(10px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(249, 115, 22, 0.2)';
+                    e.currentTarget.style.borderColor = '#e2e8f0';
                     e.currentTarget.style.boxShadow = 'none';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
@@ -136,7 +136,7 @@ const Resources = () => {
                   <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
                     {resource.icon}
                   </div>
-                  <h3 style={{ color: '#f97316', marginBottom: '1.25rem' }}>
+                  <h3 style={{ color: '#111111', marginBottom: '1.25rem' }}>
                     {resource.category}
                   </h3>
                   <ul style={{ listStyle: 'none' }}>
@@ -144,7 +144,7 @@ const Resources = () => {
                       <li
                         key={idx}
                         style={{
-                          color: '#94a3b8',
+                          color: '#475569',
                           marginBottom: '0.75rem',
                           paddingLeft: '1.5rem',
                           position: 'relative',
@@ -154,7 +154,7 @@ const Resources = () => {
                           style={{
                             position: 'absolute',
                             left: 0,
-                            color: '#f97316',
+                            color: '#111111',
                           }}
                         >
                           →
@@ -173,7 +173,7 @@ const Resources = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -191,7 +191,7 @@ const Resources = () => {
               <div
                 style={{
                   height: '280px',
-                  background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+                  background: 'linear-gradient(135deg, #d4d4d4 0%, #333333 100%)',
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -207,7 +207,7 @@ const Resources = () => {
                 <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>Complete guide to choosing the right wire for any application</p>
               </div>
               <div>
-                <h3 style={{ color: '#f97316', marginBottom: '1rem', fontSize: '1.3rem' }}>How to Choose the Right Wire</h3>
+                <h3 style={{ color: '#111111', marginBottom: '1rem', fontSize: '1.3rem' }}>How to Choose the Right Wire</h3>
                 {[
                   'Determine the current-carrying capacity required (Amperes)',
                   'Select appropriate conductor size (sq mm) based on load',
@@ -224,8 +224,8 @@ const Resources = () => {
                       alignItems: 'flex-start',
                     }}
                   >
-                    <span style={{ color: '#f97316', fontWeight: 700, minWidth: '24px' }}>{index + 1}.</span>
-                    <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{step}</p>
+                    <span style={{ color: '#111111', fontWeight: 700, minWidth: '24px' }}>{index + 1}.</span>
+                    <p style={{ color: '#475569', fontSize: '0.95rem' }}>{step}</p>
                   </div>
                 ))}
               </div>
@@ -234,7 +234,7 @@ const Resources = () => {
         </section>
 
         {/* Wire Comparison Table */}
-        <section className="section" style={{ background: '#0f172a' }}>
+        <section className="section" style={{ background: '#f8fafc' }}>
           <div className="container">
             <h2 className="section-title">Wire Type Comparison</h2>
             <div style={{ overflowX: 'auto' }}>
@@ -246,16 +246,16 @@ const Resources = () => {
                 }}
               >
                 <thead>
-                  <tr style={{ background: 'rgba(249, 115, 22, 0.2)' }}>
+                  <tr style={{ background: '#ffedd5' }}>
                     {['Wire Type', 'Conductor', 'Insulation', 'Voltage Rating', 'Best For'].map((header) => (
                       <th
                         key={header}
                         style={{
                           padding: '1rem',
-                          color: '#f97316',
+                          color: '#111111',
                           fontWeight: 600,
                           textAlign: 'left',
-                          borderBottom: '2px solid rgba(249, 115, 22, 0.3)',
+                          borderBottom: '2px solid #111111',
                           fontSize: '0.95rem',
                         }}
                       >
@@ -276,11 +276,11 @@ const Resources = () => {
                     <tr
                       key={index}
                       style={{
-                        borderBottom: '1px solid rgba(249, 115, 22, 0.1)',
+                        borderBottom: '1px solid #e2e8f0',
                         transition: 'background 0.3s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(249, 115, 22, 0.05)';
+                        e.currentTarget.style.background = '#f8fafc';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background = 'transparent';
@@ -311,7 +311,7 @@ const Resources = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -329,13 +329,13 @@ const Resources = () => {
                   style={{
                     marginBottom: '1.5rem',
                     padding: '1.5rem',
-                    background: 'linear-gradient(135deg, #1e293b 0%, rgba(30, 41, 59, 0.5) 100%)',
+                    background: '#ffffff',
                     borderRadius: '12px',
-                    border: '1px solid rgba(249, 115, 22, 0.15)',
+                    border: '1px solid #e2e8f0',
                   }}
                 >
-                  <h4 style={{ color: '#f97316', marginBottom: '0.75rem', fontSize: '1rem' }}>{faq.q}</h4>
-                  <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: '1.7' }}>{faq.a}</p>
+                  <h4 style={{ color: '#111111', marginBottom: '0.75rem', fontSize: '1rem' }}>{faq.q}</h4>
+                  <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -346,7 +346,7 @@ const Resources = () => {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+            background: '#ffffff',
           }}
         >
           <div className="container">
@@ -354,23 +354,23 @@ const Resources = () => {
               style={{
                 maxWidth: '800px',
                 margin: '0 auto',
-                background: 'rgba(249, 115, 22, 0.1)',
+                background: 'rgba(0, 0, 0, 0.06)',
                 padding: '3rem',
                 borderRadius: '12px',
-                border: '2px solid rgba(249, 115, 22, 0.2)',
+                border: '2px solid rgba(0, 0, 0, 0.1)',
               }}
             >
-              <h2 style={{ color: '#f97316', marginBottom: '1rem' }}>
+              <h2 style={{ color: '#111111', marginBottom: '1rem' }}>
                 Need More Information?
               </h2>
-              <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>
                 Can't find what you're looking for? Our technical support team is
                 available 24/7 to assist with any questions or custom requirements.
               </p>
               <button
                 style={{
-                  background: '#f97316',
-                  color: '#000',
+                  background: '#111111',
+                  color: '#ffffff',
                   border: 'none',
                   padding: '0.875rem 2rem',
                   fontSize: '1rem',
@@ -380,11 +380,11 @@ const Resources = () => {
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#ea580c';
-                  e.target.style.boxShadow = '0 0 30px rgba(249, 115, 22, 0.4)';
+                  e.target.style.background = '#333333';
+                  e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = '#f97316';
+                  e.target.style.background = '#111111';
                   e.target.style.boxShadow = 'none';
                 }}
               >
