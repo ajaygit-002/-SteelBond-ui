@@ -9,6 +9,7 @@ import Careers from './pages/Careers';
 import FooterPage from './pages/Footer';
 import ExploreMore from './pages/ExploreMore';
 import LearnMore from './pages/LearnMore';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/footer" element={<FooterPage />} />
         <Route path="/explore-more" element={<ExploreMore />} />
         <Route path="/learn-more" element={<LearnMore />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

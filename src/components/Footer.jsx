@@ -81,9 +81,21 @@ const Footer = () => {
               >
                 SB
               </div>
-              <h3 style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', marginBottom: '0.5rem' }}>
-                SteelBond Wires
-              </h3>
+              <h3
+  style={{
+    fontSize: "clamp(1.25rem, 2vw, 1.5rem)",
+    fontWeight: 800,
+    marginBottom: "0.5rem",
+    background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    color: "transparent",
+    WebkitTextFillColor: "transparent",
+    letterSpacing: "1px",
+  }}
+>
+  SteelBond Wires
+</h3>
               <p
                 style={{
                   color: '#475569',
@@ -150,17 +162,22 @@ const Footer = () => {
             {/* Quick Links Section */}
             <div className="footer-section">
               <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#1e293b',
-                }}
-              >
-                Quick Links
-              </h4>
+  style={{
+    fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+    marginBottom: "1.5rem",
+    fontWeight: 600,
+    background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    color: "transparent",
+    WebkitTextFillColor: "transparent",
+    letterSpacing: "1px",
+  }}
+>
+  Quick Links
+</h4> 
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {['Home', 'About Us', 'Products', 'Innovation', 'Careers', 'Contact'].map(link => (
+                {['Home', 'About Us', 'Products', 'Innovation', 'Careers'].map(link => (
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase()}`}
@@ -183,21 +200,47 @@ const Footer = () => {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href="/contact"
+                    style={{
+                      color: '#475569',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-block',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#111111';
+                      e.target.style.paddingLeft = '0.5rem';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#475569';
+                      e.target.style.paddingLeft = '0';
+                    }}
+                  >
+                    → Contact
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Services Section */}
             <div className="footer-section">
               <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#1e293b',
-                }}
-              >
-                Services
-              </h4>
+    style={{
+      fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+      marginBottom: "1.5rem",
+      fontWeight: 600,
+      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+      backgroundClip: "text",
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+      WebkitTextFillColor: "transparent",
+      letterSpacing: "1px",
+    }}
+  >
+    Services
+  </h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   'Bulk Orders',
@@ -234,15 +277,20 @@ const Footer = () => {
             {/* Contact Information */}
             <div className="footer-section">
               <h4
-                style={{
-                  fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                  marginBottom: '1.5rem',
-                  fontWeight: 600,
-                  color: '#1e293b',
-                }}
-              >
-                Contact Us
-              </h4>
+  style={{
+    fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+    marginBottom: "1.5rem",
+    fontWeight: 600,
+    background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    color: "transparent",
+    WebkitTextFillColor: "transparent",
+    letterSpacing: "1px",
+  }}
+>
+  Contact Us
+</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div>
                   <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
@@ -299,14 +347,21 @@ const Footer = () => {
           }}
         >
           <h3
-            style={{
-              color: '#111111',
-              marginBottom: '0.75rem',
-              fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
-            }}
-          >
-            Stay Updated
-          </h3>
+  style={{
+    fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
+    marginBottom: "0.75rem",
+    fontWeight: 700,
+    background: "linear-gradient(135deg, #1a1a1a 0%, #d4d4d4 100%)",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    color: "transparent",
+    WebkitTextFillColor: "transparent",
+    letterSpacing: "1px",
+    display: "inline-block"
+  }}
+>
+  Stay Updated
+</h3>
           <p style={{ color: '#475569', marginBottom: '1.5rem' }}>
             Subscribe to our newsletter for the latest updates and industry insights.
           </p>
