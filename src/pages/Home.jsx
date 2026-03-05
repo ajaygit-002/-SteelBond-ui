@@ -511,7 +511,7 @@ const Home = () => {
                 icon: '🔧',
                 title: 'Control & Instrumentation',
                 desc: 'Shielded & unshielded cables for precise signal transmission in automation systems.',
-                img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)',
+                img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)',
               },
               {
                 icon: '☀️',

@@ -76,6 +76,7 @@ const Footer = () => {
                   fontWeight: 700,
                   fontSize: '1.5rem',
                   marginBottom: '1rem',
+                  color: '#ffffff',
                 }}
               >
                 SB
@@ -244,7 +245,7 @@ const Footer = () => {
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Email</p>
+                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
                   <a
                     href="mailto:info@SteelBond Wires.com"
                     style={{
@@ -256,11 +257,11 @@ const Footer = () => {
                     onMouseEnter={(e) => (e.target.style.color = '#111111')}
                     onMouseLeave={(e) => (e.target.style.color = '#475569')}
                   >
-                    info@SteelBondWires.com
+                   📧 info@SteelBondWires.com
                   </a>
                 </div>
                 <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Phone</p>
+                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
                   <a
                     href="tel:+15551234567"
                     style={{
@@ -271,14 +272,14 @@ const Footer = () => {
                     onMouseEnter={(e) => (e.target.style.color = '#111111')}
                     onMouseLeave={(e) => (e.target.style.color = '#475569')}
                   >
-                    +1 (555) 123-4567
+                     📞 +1 (555) 123-4567
                   </a>
                 </div>
                 <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>Address</p>
+                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
                   <p style={{ color: '#475569', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
-                    Industrial District<br />
-                    City, Country 12345
+                     📍Industrial District <br />
+                       City, Country 12345
                   </p>
                 </div>
               </div>

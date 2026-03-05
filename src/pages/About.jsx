@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     gsap.from('.about-content > *', {
       y: 50,
-      opacity: 0,
+      // opacity: 0,
       duration: 0.8,
       stagger: 0.2,
     });
@@ -238,8 +238,8 @@ const About = () => {
                 { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Insulation Line', desc: 'Continuous vulcanization lines for PVC, XLPE & FRLS insulation' },
                 { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Testing Laboratory', desc: 'NABL-accredited lab with advanced HV & mechanical testing equipment' },
                 { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Warehouse & Logistics', desc: '50,000 sq ft storage with GPS-tracked delivery fleet' },
-                { img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)', title: 'Quality Control Hub', desc: 'In-line quality checks with Six Sigma methodology' },
-                { img: 'linear-gradient(135deg, #b45309 0%, #dc2626 100%)', title: 'Solar Power Unit', desc: '500KW rooftop solar installation powering 40% of production' },
+                { img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)', title: 'Quality Control Hub', desc: 'In-line quality checks with Six Sigma methodology' },
+                { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Solar Power Unit', desc: '500KW rooftop solar installation powering 40% of production' },
               ].map((item, index) => (
                 <div
                   key={index}
