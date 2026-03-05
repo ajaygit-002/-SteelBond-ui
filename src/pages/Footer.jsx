@@ -67,7 +67,7 @@ const FooterPage = () => {
                 style={{
                   width: '50px',
                   height: '50px',
-                  background: 'linear-gradient(135deg, #222222, #444444)',
+                  background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                   borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',

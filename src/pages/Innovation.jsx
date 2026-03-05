@@ -174,7 +174,7 @@ const Innovation = () => {
               <div
                 style={{
                   height: '300px',
-                  background: 'linear-gradient(135deg, #d4d4d4 0%, #333333 100%)',
+                  background: 'url(/path/to/vi.jpg) center/cover no-repeat, linear-gradient(135deg, #d4d4d4 0%, #333333 100%)',
                   borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
@@ -313,12 +313,12 @@ const Innovation = () => {
                     style={{
                       minWidth: '50px',
                       height: '50px',
-                      background: '#ffedd5',
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#111111',
+                      color: '#ffffff',
                       fontWeight: 700,
                       fontSize: '1.1rem',
                     }}

@@ -228,8 +228,8 @@ const Products = () => {
                 { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Flexible Cables', sizes: '0.5 / 0.75 / 1.0 / 1.5 / 2.5 sq mm', icon: '🔌' },
                 { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Submersible Flat', sizes: '1.5 / 2.5 / 4.0 / 6.0 / 10 sq mm', icon: '💧' },
                 { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Armoured Cables', sizes: '2.5 to 400 sq mm', icon: '🛡️' },
-                { img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)', title: 'Solar DC Cables', sizes: '2.5 / 4.0 / 6.0 / 10 sq mm', icon: '☀️' },
-                { img: 'linear-gradient(135deg, #b45309 0%, #dc2626 100%)', title: 'Control Cables', sizes: '0.5 to 2.5 sq mm - multi core', icon: '🔧' },
+                { img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)', title: 'Solar DC Cables', sizes: '2.5 / 4.0 / 6.0 / 10 sq mm', icon: '☀️' },
+                { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Control Cables', sizes: '0.5 to 2.5 sq mm - multi core', icon: '🔧' },
               ].map((item, index) => (
                 <div
                   key={index}

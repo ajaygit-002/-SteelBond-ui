@@ -194,12 +194,12 @@ const About = () => {
                     style={{
                       minWidth: '70px',
                       height: '70px',
-                      background: '#ffedd5',
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#111111',
+                      color: '#ffffff',
                       fontWeight: 700,
                       fontSize: '1rem',
                     }}
@@ -316,7 +316,7 @@ const About = () => {
                       width: '80px',
                       height: '80px',
                       borderRadius: '50%',
-                      background: '#ffedd5',
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                       margin: '0 auto 1rem',
                       display: 'flex',
                       alignItems: 'center',

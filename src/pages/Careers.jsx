@@ -258,8 +258,8 @@ const Careers = () => {
                 { img: 'linear-gradient(135deg, #bfbfbf 0%, #2a2a2a 100%)', title: 'Team Building Events', icon: '🤝' },
                 { img: 'linear-gradient(135deg, #ababab 0%, #3a3a3a 100%)', title: 'Training Programs', icon: '📚' },
                 { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Sports & Recreation', icon: '🏏' },
-                { img: 'linear-gradient(135deg, #c2410c 0%, #9a3412 100%)', title: 'Community Service', icon: '❤️' },
-                { img: 'linear-gradient(135deg, #b45309 0%, #dc2626 100%)', title: 'Award Ceremonies', icon: '🏆' },
+                { img: 'linear-gradient(135deg, #e8e8e8 0%, #4a4a4a 100%)', title: 'Community Service', icon: '❤️' },
+                { img: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)', title: 'Award Ceremonies', icon: '🏆' },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -336,12 +336,12 @@ const Careers = () => {
                     style={{
                       minWidth: '50px',
                       height: '50px',
-                      background: '#ffedd5',
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#111111',
+                      color: '#ffffff',
                       fontWeight: 700,
                       fontSize: '1.1rem',
                     }}
