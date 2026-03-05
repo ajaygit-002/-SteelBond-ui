@@ -52,7 +52,7 @@ const Contact = () => {
       <div style={styles.mainContainer}>
         {/* HERO SECTION */}
         <section style={styles.heroSection}>
-          <h1 style={styles.heroTitle}>Get in Touch with Sonali Wires</h1>
+          <h1 style={styles.heroTitle}>Get in Touch with  SteelBond Wires</h1>
           <p style={styles.heroSubtitle}>
             We're here to support product enquiries, dealership opportunities, and technical assistance.
           </p>

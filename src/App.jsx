@@ -10,6 +10,10 @@ import FooterPage from './pages/Footer';
 import ExploreMore from './pages/ExploreMore';
 import LearnMore from './pages/LearnMore';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/Privacy Policy';
+import TermsOfService from './pages/Terms of Service';
+import CookiePolicy from './pages/Cookie Policy';
+import Sitemap from './pages/Sitemap';
 
 function App() {
   return (
@@ -26,6 +30,10 @@ function App() {
         <Route path="/explore-more" element={<ExploreMore />} />
         <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/sitemap" element={<Sitemap />} />
       </Routes>
     </Router>
   );

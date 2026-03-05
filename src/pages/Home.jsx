@@ -158,8 +158,8 @@ const Home = () => {
             className="responsive-grid-2"
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+              gap: 'clamp(2rem, 5vw, 4rem)',
               alignItems: 'center',
             }}
           >
@@ -174,48 +174,73 @@ const Home = () => {
               <div
                 style={{
                   width: '100%',
-                  height: '400px',
+                  maxWidth: '500px',
+                  height: 'clamp(300px, 50vw, 450px)',
                   backgroundImage: `url(${viBg})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
-                  borderRadius: '12px',
+                  borderRadius: 'clamp(8px, 3vw, 16px)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#ffffff',
-                  fontSize: '2.5rem',
+                  fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                   fontWeight: 700,
                   textAlign: 'center',
-                  padding: '2rem',
-                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                  padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                Welcome to SteelBond Wires
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(135deg, rgba(26, 26, 26, 0.4), rgba(107, 114, 128, 0.4))',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  Welcome to SteelBond Wires
+                </div>
               </div>
             </div>
 
             {/* Content Side */}
             <div>
               <h2
-                 style={{
-                      fontSize: "2.5rem",
-                      fontWeight: "800",
-                      marginBottom: "1.5rem",
-                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      letterSpacing: "2px"
-            }}
+                style={{
+                  fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
+                  fontWeight: '800',
+                  marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+                  background: 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  letterSpacing: '2px',
+                }}
               >
-             WHO WE ARE
-           </h2>
+                WHO WE ARE
+              </h2>
+
+              <div
+                style={{
+                  height: '4px',
+                  width: '80px',
+                  background: 'linear-gradient(90deg, #1a1a1a, #9ca3af)',
+                  borderRadius: '2px',
+                  marginBottom: 'clamp(1.5rem, 3vw, 2rem)',
+                }}
+              ></div>
+
               <p
                 style={{
-                  fontSize: '1.1rem',
+                  fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
                   color: '#475569',
                   lineHeight: '1.8',
-                  marginBottom: '1.5rem',
+                  marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
                 }}
               >
                 SteelBond Wires is a BIS & ISO certified manufacturer of high-quality
@@ -223,33 +248,82 @@ const Home = () => {
               </p>
               <p
                 style={{
-                  fontSize: '1.1rem',
+                  fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
                   color: '#475569',
                   lineHeight: '1.8',
-                  marginBottom: '1.5rem',
+                  marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
                 }}
               >
                 Made with 99.95%+ pure copper and RoHS & REACH compliant materials, our
                 products ensure superior safety, efficiency, and long-term performance.
               </p>
+
+              {/* Key Features Mini Cards */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+                  gap: 'clamp(0.75rem, 2vw, 1rem)',
+                  marginBottom: 'clamp(1.5rem, 3vw, 2rem)',
+                }}
+              >
+                {[
+                  { icon: '✓', label: 'BIS Certified' },
+                  { icon: '⚡', label: 'Pure Copper' },
+                  { icon: '🛡️', label: 'RoHS Compliant' },
+                  { icon: '🌍', label: 'Global Standard' },
+                ].map((feature, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: '#f5f5f5',
+                      padding: 'clamp(0.75rem, 2vw, 1rem)',
+                      borderRadius: '8px',
+                      border: '1px solid #e2e8f0',
+                      textAlign: 'center',
+                      fontSize: '0.9rem',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#111111';
+                      e.currentTarget.style.color = '#ffffff';
+                      e.currentTarget.style.borderColor = '#111111';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#f5f5f5';
+                      e.currentTarget.style.color = '#111111';
+                      e.currentTarget.style.borderColor = '#e2e8f0';
+                    }}
+                  >
+                    <div style={{ fontSize: '1.5rem', marginBottom: '0.25rem' }}>
+                      {feature.icon}
+                    </div>
+                    <div style={{ fontSize: 'clamp(0.75rem, 1.5vw, 0.9rem)', fontWeight: 600 }}>
+                      {feature.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <p
                 style={{
-                  fontSize: '1.1rem',
+                  fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
                   color: '#111111',
                   fontWeight: 600,
-                  marginBottom: '2rem',
+                  marginBottom: 'clamp(1.5rem, 3vw, 2rem)',
                   lineHeight: '1.8',
+                  fontStyle: 'italic',
                 }}
               >
                 SteelBond Wires - Powering Progress. Connecting Trust.
               </p>
               <button
                 style={{
-                  background: '#111111',
+                  background: 'linear-gradient(135deg, #1a1a1a, #6b7280)',
                   color: '#ffffff',
                   border: 'none',
-                  padding: '0.75rem 2rem',
-                  fontSize: '1rem',
+                  padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem)',
+                  fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
                   fontWeight: 600,
                   borderRadius: '8px',
                   cursor: 'pointer',
@@ -257,14 +331,16 @@ const Home = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = '#333333';
-                  e.target.style.boxShadow = '0 0 30px rgba(0, 0, 0, 0.15)';
+                  e.target.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.2)';
+                  e.target.style.transform = 'translateY(-3px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = '#111111';
+                  e.target.style.background = 'linear-gradient(135deg, #1a1a1a, #6b7280)';
                   e.target.style.boxShadow = 'none';
+                  e.target.style.transform = 'translateY(0)';
                 }}
               >
-                Know More
+                Know More →
               </button>
             </div>
           </div>
@@ -388,19 +464,26 @@ const Home = () => {
               satisfaction has made us a trusted name in the industry.
             </p>
           </div>
-        </div>``
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="section" style={{ background: '#f8fafc' }}>
+      <section className="section" style={{ background: '#f8fafc', padding: 'clamp(2rem, 5vw, 4rem) 0' }}>
         <div className="container">
-          <h2 className="section-title">Why Choose SteelBond Wires?</h2>
+          <h2 className="section-title" style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>Why Choose SteelBond Wires?</h2>
           <div
             className="features-container"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '2rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(260px, 80vw, 320px), 1fr))',
+              gap: 'clamp(1.5rem, 4vw, 2.5rem)',
+              width: '100%',
+              margin: '0 auto',
+              position: 'relative',
+              zIndex: 20,
+              visibility: 'visible',
+              opacity: 1,
+              padding: '1rem',
             }}
           >
             {[
@@ -409,36 +492,42 @@ const Home = () => {
                 description:
                   'Our wires undergo rigorous testing to ensure exceptional durability and performance.',
                 icon: '⭐',
+                gradient: 'linear-gradient(135deg, #ffd89b 0%, #ffa500 100%)',
               },
               {
                 title: 'Industry Expertise',
                 description:
                   'Over 30 years of experience serving industrial and manufacturing sectors.',
                 icon: '🏭',
+                gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
               },
               {
                 title: 'Custom Solutions',
                 description:
                   'Tailored wire solutions designed to meet your specific industry requirements.',
                 icon: '⚙️',
+                gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
               },
               {
                 title: 'Global Reach',
                 description:
                   'Reliable supply chain delivering premium products worldwide efficiently.',
                 icon: '🌍',
+                gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
               },
               {
                 title: 'Innovation',
                 description:
                   'Continuous R&D for cutting-edge wire technology and manufacturing methods.',
                 icon: '🚀',
+                gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
               },
               {
                 title: '24/7 Support',
                 description:
                   'Dedicated customer support team ready to assist you anytime, anywhere.',
                 icon: '📞',
+                gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
               },
             ].map((feature, index) => (
               <div
@@ -446,33 +535,165 @@ const Home = () => {
                 className="feature-card"
                 style={{
                   background: '#ffffff',
-                  padding: '2rem',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(0, 0, 0, 0.06)',
-                  transition: 'all 0.3s ease',
+                  padding: 'clamp(2rem, 5vw, 2.5rem)',
+                  borderRadius: 'clamp(12px, 4vw, 18px)',
+                  border: '2px solid rgba(0, 0, 0, 0.06)',
+                  transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   cursor: 'pointer',
+                  position: 'relative',
+                  overflow: 'visible',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  minHeight: 'clamp(340px, 90vw, 480px)',
+                  boxShadow: '0 8px 28px rgba(0, 0, 0, 0.12)',
+                  backfaceVisibility: 'hidden',
+                  WebkitFontSmoothing: 'antialiased',
+                  willChange: 'transform',
+                  visibility: 'visible',
+                  opacity: 1,
+                  zIndex: 25,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#111111';
-                  e.currentTarget.style.boxShadow =
-                    '0 0 30px rgba(0, 0, 0, 0.1)';
-                  e.currentTarget.style.transform = 'translateY(-5px)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)';
+                  e.currentTarget.style.boxShadow = '0 24px 72px rgba(0, 0, 0, 0.18)';
+                  e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
+                  
+                  const icon = e.currentTarget.querySelector('.feature-icon');
+                  if (icon) {
+                    gsap.to(icon, {
+                      scale: 1.3,
+                      rotation: 10,
+                      duration: 0.3,
+                      ease: 'back.out',
+                    });
+                  }
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.06)';
-                  e.currentTarget.style.boxShadow = 'none';
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 28px rgba(0, 0, 0, 0.12)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  
+                  const icon = e.currentTarget.querySelector('.feature-icon');
+                  if (icon) {
+                    gsap.to(icon, {
+                      scale: 1,
+                      rotation: 0,
+                      duration: 0.3,
+                      ease: 'back.out',
+                    });
+                  }
                 }}
               >
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    right: 0,
+                    width: '140px',
+                    height: '140px',
+                    background: feature.gradient,
+                    borderRadius: '50%',
+                    opacity: 0.08,
+                    filter: 'blur(3px)',
+                    zIndex: -1,
+                    pointerEvents: 'none',
+                  }}
+                ></div>
+
+                <div
+                  style={{
+                    width: 'clamp(60px, 12vw, 80px)',
+                    height: 'clamp(60px, 12vw, 80px)',
+                    background: feature.gradient,
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+                    marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+                    boxShadow: `0 8px 20px ${feature.gradient}40`,
+                    position: 'relative',
+                    zIndex: 1,
+                  }}
+                  className="feature-icon"
+                >
                   {feature.icon}
                 </div>
-                <h3 style={{ marginBottom: '0.75rem', color: '#111111' }}>
+
+                <h3
+                  style={{
+                    marginBottom: 'clamp(0.75rem, 2vw, 1rem)',
+                    color: '#000000',
+                    fontSize: 'clamp(1.1rem, 3vw, 1.35rem)',
+                    fontWeight: 800,
+                    position: 'relative',
+                    zIndex: 2,
+                    letterSpacing: '0.5px',
+                  }}
+                >
                   {feature.title}
                 </h3>
-                <p style={{ color: '#475569', lineHeight: '1.6' }}>
+
+                <div
+                  style={{
+                    height: '3px',
+                    width: '40px',
+                    background: feature.gradient,
+                    marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+                    borderRadius: '2px',
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                ></div>
+
+                <p
+                  style={{
+                    color: '#1a1a1a',
+                    lineHeight: '1.8',
+                    fontSize: 'clamp(0.95rem, 2.5vw, 1rem)',
+                    position: 'relative',
+                    zIndex: 2,
+                    flex: 1,
+                    fontWeight: 500,
+                  }}
+                >
                   {feature.description}
                 </p>
+
+                <a
+                  href="#"
+                  style={{
+                    marginTop: 'clamp(1.25rem, 3vw, 1.75rem)',
+                    color: '#000000',
+                    textDecoration: 'none',
+                    fontWeight: 700,
+                    fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                    position: 'relative',
+                    zIndex: 2,
+                    transition: 'all 0.3s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                  }}
+                  onClick={(e) => e.preventDefault()}
+                  onMouseEnter={(e) => {
+                    gsap.to(e.target, {
+                      x: 5,
+                      duration: 0.3,
+                      ease: 'power2.out',
+                    });
+                  }}
+                  onMouseLeave={(e) => {
+                    gsap.to(e.target, {
+                      x: 0,
+                      duration: 0.3,
+                      ease: 'power2.out',
+                    });
+                  }}
+                >
+                  Learn More <span>→</span>
+                </a>
               </div>
             ))}
           </div>

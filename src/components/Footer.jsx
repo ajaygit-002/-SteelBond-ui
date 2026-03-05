@@ -52,17 +52,18 @@ const Footer = () => {
           padding: 'clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 5rem)',
         }}
       >
-        {/* Top Section: Brand + Links in Full Width Layout */}
+        {/* Top Section: 4-Column Grid Layout - Equal Width */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'flex-start',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(200px, 22vw, 280px), 1fr))',
             gap: 'clamp(2rem, 5vw, 4rem)',
             marginBottom: '3rem',
+            width: '100%',
           }}
         >
-          {/* Brand Section - Fixed Width Left */}
-          <div className="footer-section" style={{ flex: '0 0 280px' }}>
+          {/* Brand Section */}
+          <div className="footer-section" style={{}}>
             <div style={{ marginBottom: '1.5rem' }}>
               <div
                 style={{
@@ -110,7 +111,7 @@ const Footer = () => {
             </div>
 
             {/* Social Icons */}
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               {['facebook', 'twitter', 'linkedin', 'instagram'].map(platform => (
                 <a
                   key={platform}
@@ -132,7 +133,7 @@ const Footer = () => {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = '#111111';
-                    e.currentTarget.style.color = '#000';
+                    e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseLeave={(e) => {
@@ -150,18 +151,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Side - All Links Filling Full Width */}
-          <div
-            style={{
-              flex: 1,
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 'clamp(2rem, 4vw, 3rem)',
-            }}
-          >
-            {/* Quick Links Section */}
-            <div className="footer-section">
-              <h4
+          {/* Quick Links Section */}
+          <div className="footer-section">
+            <h4
   style={{
     fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
     marginBottom: "1.5rem",
@@ -176,33 +168,11 @@ const Footer = () => {
 >
   Quick Links
 </h4> 
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {['Home', 'About Us', 'Products', 'Innovation', 'Careers'].map(link => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase()}`}
-                      style={{
-                        color: '#475569',
-                        fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                        transition: 'all 0.3s ease',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.color = '#111111';
-                        e.target.style.paddingLeft = '0.5rem';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.color = '#475569';
-                        e.target.style.paddingLeft = '0';
-                      }}
-                    >
-                      → {link}
-                    </a>
-                  </li>
-                ))}
-                <li>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {['Home', 'About Us', 'Products', 'Innovation', 'Careers', 'Contact'].map(link => (
+                <li key={link}>
                   <a
-                    href="/contact"
+                    href={`#${link.toLowerCase()}`}
                     style={{
                       color: '#475569',
                       fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
@@ -218,15 +188,16 @@ const Footer = () => {
                       e.target.style.paddingLeft = '0';
                     }}
                   >
-                    → Contact
+                    → {link}
                   </a>
                 </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </div>
 
-            {/* Services Section */}
-            <div className="footer-section">
-              <h4
+          {/* Services Section */}
+          <div className="footer-section">
+            <h4
     style={{
       fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
       marginBottom: "1.5rem",
@@ -241,42 +212,95 @@ const Footer = () => {
   >
     Services
   </h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {[
-                  'Bulk Orders',
-                  'Custom Solutions',
-                  'Technical Support',
-                  'Quality Assurance',
-                  'Logistics',
-                ].map(service => (
-                  <li key={service}>
-                    <a
-                      href={`#${service.toLowerCase()}`}
-                      style={{
-                        color: '#475569',
-                        fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                        transition: 'all 0.3s ease',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.color = '#111111';
-                        e.target.style.paddingLeft = '0.5rem';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.color = '#475569';
-                        e.target.style.paddingLeft = '0';
-                      }}
-                    >
-                      → {service}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                'Bulk Orders',
+                'Custom Solutions',
+                'Technical Support',
+                'Quality Assurance',
+                'Logistics',
+              ].map(service => (
+                <li key={service}>
+                  <a
+                    href={`#${service.toLowerCase()}`}
+                    style={{
+                      color: '#475569',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-block',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#111111';
+                      e.target.style.paddingLeft = '0.5rem';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#475569';
+                      e.target.style.paddingLeft = '0';
+                    }}
+                  >
+                    → {service}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Contact Information */}
-            <div className="footer-section">
-              <h4
+          {/* Legal & Policies Section */}
+          <div className="footer-section">
+            <h4
+    style={{
+      fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+      marginBottom: "1.5rem",
+      fontWeight: 600,
+      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+      backgroundClip: "text",
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+      WebkitTextFillColor: "transparent",
+      letterSpacing: "1px",
+    }}
+  >
+    Legal
+  </h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms of Service', path: '/terms-of-service' },
+                { name: 'Cookie Policy', path: '/cookie-policy' },
+                { name: 'Sitemap', path: '/sitemap' },
+              ].map(link => (
+                <li key={link.path}>
+                  <a
+                    href={link.path}
+                    style={{
+                      color: '#475569',
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                      transition: 'all 0.3s ease',
+                      display: 'inline-block',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = '#111111';
+                      e.target.style.paddingLeft = '0.5rem';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = '#475569';
+                      e.target.style.paddingLeft = '0';
+                    }}
+                  >
+                    → {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Information - Full Width Below */}
+        <div className="footer-section" style={{
+          paddingTop: 'clamp(2rem, 4vw, 3rem)',
+          borderTop: '1px solid #e2e8f0',
+        }}>
+          <h4
   style={{
     fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
     marginBottom: "1.5rem",
@@ -291,46 +315,44 @@ const Footer = () => {
 >
   Contact Us
 </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
-                  <a
-                    href="mailto:info@SteelBond Wires.com"
-                    style={{
-                      color: '#475569',
-                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                      transition: 'color 0.3s ease',
-                      wordBreak: 'break-word',
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = '#111111')}
-                    onMouseLeave={(e) => (e.target.style.color = '#475569')}
-                  >
-                   📧 info@SteelBondWires.com
-                  </a>
-                </div>
-                <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
-                  <a
-                    href="tel:+15551234567"
-                    style={{
-                      color: '#475569',
-                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
-                      transition: 'color 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = '#111111')}
-                    onMouseLeave={(e) => (e.target.style.color = '#475569')}
-                  >
-                     📞 +1 (555) 123-4567
-                  </a>
-                </div>
-                <div>
-                  <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.25rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}></p>
-                  <p style={{ color: '#475569', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
-                     📍Industrial District <br />
-                       City, Country 12345
-                  </p>
-                </div>
-              </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
+            <div>
+              <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>📧 Email</p>
+              <a
+                href="mailto:info@SteelBondWires.com"
+                style={{
+                  color: '#475569',
+                  fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                  transition: 'color 0.3s ease',
+                  wordBreak: 'break-word',
+                }}
+                onMouseEnter={(e) => (e.target.style.color = '#111111')}
+                onMouseLeave={(e) => (e.target.style.color = '#475569')}
+              >
+                info@SteelBondWires.com
+              </a>
+            </div>
+            <div>
+              <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>📞 Phone</p>
+              <a
+                href="tel:+15551234567"
+                style={{
+                  color: '#475569',
+                  fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                  transition: 'color 0.3s ease',
+                }}
+                onMouseEnter={(e) => (e.target.style.color = '#111111')}
+                onMouseLeave={(e) => (e.target.style.color = '#475569')}
+              >
+                +1 (555) 123-4567
+              </a>
+            </div>
+            <div>
+              <p style={{ color: '#111111', fontWeight: 600, marginBottom: '0.5rem', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>📍 Address</p>
+              <p style={{ color: '#475569', fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}>
+                Industrial District<br />
+                City, Country 12345
+              </p>
             </div>
           </div>
         </div>
@@ -542,10 +564,15 @@ const Footer = () => {
                 flexWrap: 'wrap',
               }}
             >
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Sitemap'].map(link => (
+              {[
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms of Service', path: '/terms-of-service' },
+                { name: 'Cookie Policy', path: '/cookie-policy' },
+                { name: 'Sitemap', path: '/sitemap' },
+              ].map(link => (
                 <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={link.path}
+                  href={link.path}
                   style={{
                     color: '#64748b',
                     fontSize: 'clamp(0.75rem, 1vw, 0.875rem)',
@@ -554,7 +581,7 @@ const Footer = () => {
                   onMouseEnter={(e) => (e.target.style.color = '#111111')}
                   onMouseLeave={(e) => (e.target.style.color = '#64748b')}
                 >
-                  {link}
+                  {link.name}
                 </a>
               ))}
             </div>
