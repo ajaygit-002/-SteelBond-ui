@@ -198,14 +198,18 @@ const Home = () => {
             {/* Content Side */}
             <div>
               <h2
-                style={{
-                  fontSize: '2.5rem',
-                  color: '#1e293b',
-                  marginBottom: '1.5rem',
-                }}
+                 style={{
+                      fontSize: "2.5rem",
+                      fontWeight: "800",
+                      marginBottom: "1.5rem",
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      letterSpacing: "2px"
+            }}
               >
-                WHO WE ARE
-              </h2>
+             WHO WE ARE
+           </h2>
               <p
                 style={{
                   fontSize: '1.1rem',
@@ -286,9 +290,13 @@ const Home = () => {
           >
             <h2
               style={{
-                fontSize: '2.5rem',
-                color: '#1e293b',
-                marginBottom: '2rem',
+                fontSize: "2.5rem",
+                      fontWeight: "800",
+                      marginBottom: "1.5rem",
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      letterSpacing: "2px"
               }}
             >
               Our Vision
@@ -332,29 +340,38 @@ const Home = () => {
           >
             <h2
               style={{
-                fontSize: '2.5rem',
-                color: '#1e293b',
-                marginBottom: '1rem',
+                    fontWeight: "800",
+                      marginBottom: "1.5rem",
+                      background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      letterSpacing: "2px"
               }}
             >
               Since 1996
             </h2>
             <h3
               style={{
-                fontSize: '1.8rem',
-                color: '#111111',
-                fontWeight: 700,
-              }}
+  fontSize: "2.5rem",
+  fontWeight: 800,
+  marginBottom: "1.5rem",
+  background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
+  backgroundClip: "text",
+  WebkitBackgroundClip: "text",
+  color: "transparent",
+  WebkitTextFillColor: "transparent",
+  letterSpacing: "2px",
+}}
             >
               A Legacy of Trust & Excellence
             </h3>
             <div
               style={{
-                height: '4px',
-                width: '80px',
-                background: '#111111',
-                margin: '1.5rem auto',
-                borderRadius: '2px',
+                // height: '4px',
+                // width: '80px',
+                // background: '#111111',
+                // margin: '1.5rem auto',
+                // borderRadius: '2px',
               }}
             ></div>
             <p
@@ -371,7 +388,7 @@ const Home = () => {
               satisfaction has made us a trusted name in the industry.
             </p>
           </div>
-        </div>
+        </div>``
       </section>
 
       {/* Features Section */}

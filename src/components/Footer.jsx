@@ -343,7 +343,7 @@ const Footer = () => {
             />
             <button
               style={{
-                background: '#111111',
+                 background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
                 color: '#ffffff',
                 border: 'none',
                 padding: '0.75rem 1.5rem',
