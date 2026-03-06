@@ -598,7 +598,7 @@ const Footer = () => {
           right: '2rem',
           width: '50px',
           height: '50px',
-          background: '#111111',
+           background: "linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)",
           color: '#ffffff',
           border: 'none',
           borderRadius: '50%',
@@ -612,12 +612,12 @@ const Footer = () => {
           zIndex: '999',
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = '#333333';
+          e.target.style.background = 'linear-gradient(135deg, #d4d4d4 0%, #1a1a1a 100%)';
           e.target.style.transform = 'translateY(-5px)';
           e.target.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.15)';
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = '#111111';
+          e.target.style.background = '#655f5f';
           e.target.style.transform = 'translateY(0)';
           e.target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.12)';
         }}

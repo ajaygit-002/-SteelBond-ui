@@ -5,7 +5,6 @@ import '../styles/navbar.css';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,16 +28,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Update active link based on current location
-    const currentLink = navLinks.find(link => link.path === location.pathname);
-    if (currentLink) {
-      setActiveLink(currentLink.id);
-    }
-  }, [location.pathname]);
+  const activeLink = navLinks.find(link => link.path === location.pathname)?.id || 'home';
 
-  const handleNavClick = (path, id) => {
-    setActiveLink(id);
+  const handleNavClick = (path) => {
     navigate(path);
     setIsMobileMenuOpen(false);
   };
@@ -49,13 +41,12 @@ const Navbar = () => {
 
   const handleLogoClick = () => {
     navigate('/');
-    setActiveLink('home');
     setIsMobileMenuOpen(false);
   };
 
   return (
     <>
-      <nav className={`navbar`}>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           {/* Brand */}
           <div className="navbar-brand" onClick={handleLogoClick}>
@@ -69,11 +60,11 @@ const Navbar = () => {
               <li key={link.id}>
                 <a
                   className={`nav-link ${activeLink === link.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(link.path, link.id)}
+                  onClick={() => handleNavClick(link.path)}
                   role="button"
                   tabIndex="0"
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleNavClick(link.path, link.id);
+                    if (e.key === 'Enter') handleNavClick(link.path);
                   }}
                 >
                   {link.label}
@@ -85,7 +76,7 @@ const Navbar = () => {
           {/* Desktop Contact - moved into nav links; keep for accessibility on wide screens */}
           <button
             className="nav-contact-btn"
-            onClick={() => handleNavClick('/contact', 'contact')}
+            onClick={() => handleNavClick('/contact')}
             aria-label="Contact Us"
           >
             Contact Us
@@ -125,17 +116,17 @@ const Navbar = () => {
             <a
               key={link.id}
               className={`nav-link ${activeLink === link.id ? 'active' : ''}`}
-              onClick={() => handleNavClick(link.path, link.id)}
+              onClick={() => handleNavClick(link.path)}
               role="button"
               tabIndex="0"
               onKeyPress={(e) => {
-                if (e.key === 'Enter') handleNavClick(link.path, link.id);
+                if (e.key === 'Enter') handleNavClick(link.path);
               }}
             >
               {link.label}
             </a>
           ))}
-          <button className="nav-contact-btn-mobile" onClick={() => handleNavClick('/contact', 'contact')}>
+          <button className="nav-contact-btn-mobile" onClick={() => handleNavClick('/contact')}>
             Contact Us
           </button>
         </nav>

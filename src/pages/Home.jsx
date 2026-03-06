@@ -113,32 +113,54 @@ const StatsCounter = () => {
 
 const Home = () => {
   useEffect(() => {
-    // Section title animations
-    gsap.from('.section-title', {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: '.section-title',
-        start: 'top 80%',
-      },
+    const ctx = gsap.context(() => {
+      // Animate each title with its own trigger so refresh/restore doesn't hide all titles.
+      gsap.utils.toArray('.section-title').forEach((title) => {
+        gsap.fromTo(
+          title,
+          { x: -80, autoAlpha: 0 },
+          {
+            x: 0,
+            autoAlpha: 1,
+            duration: 0.9,
+            ease: 'power2.out',
+            clearProps: 'opacity,visibility,transform',
+            scrollTrigger: {
+              trigger: title,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+              once: true,
+              invalidateOnRefresh: true,
+            },
+          }
+        );
+      });
+
+      gsap.fromTo(
+        '.feature-card',
+        { y: 60, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          stagger: 0.15,
+          ease: 'power2.out',
+          immediateRender: false,
+          clearProps: 'opacity,visibility,transform',
+          scrollTrigger: {
+            trigger: '.features-container',
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+            once: true,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
     });
 
-    // Card stagger animation
-    gsap.from('.feature-card', {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: '.features-container',
-        start: 'top 85%',
-      },
-    });
+    ScrollTrigger.refresh();
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -469,236 +491,173 @@ const Home = () => {
 
       {/* Features Section */}
       <section className="section" style={{ background: '#f8fafc', padding: 'clamp(2rem, 5vw, 4rem) 0' }}>
-        <div className="container">
-          <h2 className="section-title" style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>Why Choose SteelBond Wires?</h2>
+  <div className="container">
+    <h2 className="section-title" style={{ marginBottom: 'clamp(2rem, 5vw, 3rem)' }}>
+      Why Choose SteelBond Wires?
+    </h2>
+
+    <div
+      className="features-container"
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(260px, 80vw, 320px), 1fr))',
+        gap: 'clamp(1.5rem, 4vw, 2.5rem)',
+        width: '100%',
+        margin: '0 auto',
+        padding: '1rem',
+        // opacity: 1,
+        visibility: 'visible',
+      }}
+    >
+      {[
+        {
+          title: 'Premium Quality',
+          description:
+            'Our wires undergo rigorous testing to ensure exceptional durability and performance.',
+          icon: '⭐',
+          gradient: 'linear-gradient(135deg, #ffd89b 0%, #ffa500 100%)',
+        },
+        {
+          title: 'Industry Expertise',
+          description:
+            'Over 30 years of experience serving industrial and manufacturing sectors.',
+          icon: '🏭',
+          gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+        },
+        {
+          title: 'Custom Solutions',
+          description:
+            'Tailored wire solutions designed to meet your specific industry requirements.',
+          icon: '⚙️',
+          gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        },
+        {
+          title: 'Global Reach',
+          description:
+            'Reliable supply chain delivering premium products worldwide efficiently.',
+          icon: '🌍',
+          gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        },
+        {
+          title: 'Innovation',
+          description:
+            'Continuous R&D for cutting-edge wire technology and manufacturing methods.',
+          icon: '🚀',
+          gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+        },
+        {
+          title: '24/7 Support',
+          description:
+            'Dedicated customer support team ready to assist you anytime, anywhere.',
+          icon: '📞',
+          gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        },
+      ].map((feature, index) => (
+        <div
+          key={index}
+          className="feature-card"
+          style={{
+            background: '#ffffff',
+            padding: 'clamp(2rem, 5vw, 2.5rem)',
+            borderRadius: 'clamp(12px, 4vw, 18px)',
+            border: '2px solid rgba(0, 0, 0, 0.06)',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+            minHeight: 'clamp(340px, 90vw, 480px)',
+            boxShadow: '0 8px 28px rgba(0, 0, 0, 0.12)',
+            // opacity: 1,
+            visibility: 'visible',
+          }}
+        >
           <div
-            className="features-container"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(260px, 80vw, 320px), 1fr))',
-              gap: 'clamp(1.5rem, 4vw, 2.5rem)',
-              width: '100%',
-              margin: '0 auto',
-              position: 'relative',
-              zIndex: 20,
-              visibility: 'visible',
-              opacity: 1,
-              padding: '1rem',
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              width: '140px',
+              height: '140px',
+              background: feature.gradient,
+              borderRadius: '50%',
+              // opacity: 0.08,
+              filter: 'blur(3px)',
+              zIndex: -1,
+            }}
+          ></div>
+
+          <div
+            style={{
+              width: 'clamp(60px, 12vw, 80px)',
+              height: 'clamp(60px, 12vw, 80px)',
+              background: feature.gradient,
+              borderRadius: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+              marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+              boxShadow: `0 8px 20px ${feature.gradient}40`,
             }}
           >
-            {[
-              {
-                title: 'Premium Quality',
-                description:
-                  'Our wires undergo rigorous testing to ensure exceptional durability and performance.',
-                icon: '⭐',
-                gradient: 'linear-gradient(135deg, #ffd89b 0%, #ffa500 100%)',
-              },
-              {
-                title: 'Industry Expertise',
-                description:
-                  'Over 30 years of experience serving industrial and manufacturing sectors.',
-                icon: '🏭',
-                gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-              },
-              {
-                title: 'Custom Solutions',
-                description:
-                  'Tailored wire solutions designed to meet your specific industry requirements.',
-                icon: '⚙️',
-                gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-              },
-              {
-                title: 'Global Reach',
-                description:
-                  'Reliable supply chain delivering premium products worldwide efficiently.',
-                icon: '🌍',
-                gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-              },
-              {
-                title: 'Innovation',
-                description:
-                  'Continuous R&D for cutting-edge wire technology and manufacturing methods.',
-                icon: '🚀',
-                gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-              },
-              {
-                title: '24/7 Support',
-                description:
-                  'Dedicated customer support team ready to assist you anytime, anywhere.',
-                icon: '📞',
-                gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-              },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="feature-card"
-                style={{
-                  background: '#ffffff',
-                  padding: 'clamp(2rem, 5vw, 2.5rem)',
-                  borderRadius: 'clamp(12px, 4vw, 18px)',
-                  border: '2px solid rgba(0, 0, 0, 0.06)',
-                  transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  overflow: 'visible',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%',
-                  minHeight: 'clamp(340px, 90vw, 480px)',
-                  boxShadow: '0 8px 28px rgba(0, 0, 0, 0.12)',
-                  backfaceVisibility: 'hidden',
-                  WebkitFontSmoothing: 'antialiased',
-                  willChange: 'transform',
-                  visibility: 'visible',
-                  opacity: 1,
-                  zIndex: 25,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)';
-                  e.currentTarget.style.boxShadow = '0 24px 72px rgba(0, 0, 0, 0.18)';
-                  e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
-                  
-                  const icon = e.currentTarget.querySelector('.feature-icon');
-                  if (icon) {
-                    gsap.to(icon, {
-                      scale: 1.3,
-                      rotation: 10,
-                      duration: 0.3,
-                      ease: 'back.out',
-                    });
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.06)';
-                  e.currentTarget.style.boxShadow = '0 8px 28px rgba(0, 0, 0, 0.12)';
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  
-                  const icon = e.currentTarget.querySelector('.feature-icon');
-                  if (icon) {
-                    gsap.to(icon, {
-                      scale: 1,
-                      rotation: 0,
-                      duration: 0.3,
-                      ease: 'back.out',
-                    });
-                  }
-                }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    right: 0,
-                    width: '140px',
-                    height: '140px',
-                    background: feature.gradient,
-                    borderRadius: '50%',
-                    opacity: 0.08,
-                    filter: 'blur(3px)',
-                    zIndex: -1,
-                    pointerEvents: 'none',
-                  }}
-                ></div>
-
-                <div
-                  style={{
-                    width: 'clamp(60px, 12vw, 80px)',
-                    height: 'clamp(60px, 12vw, 80px)',
-                    background: feature.gradient,
-                    borderRadius: '12px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'clamp(2rem, 5vw, 2.5rem)',
-                    marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
-                    boxShadow: `0 8px 20px ${feature.gradient}40`,
-                    position: 'relative',
-                    zIndex: 1,
-                  }}
-                  className="feature-icon"
-                >
-                  {feature.icon}
-                </div>
-
-                <h3
-                  style={{
-                    marginBottom: 'clamp(0.75rem, 2vw, 1rem)',
-                    color: '#000000',
-                    fontSize: 'clamp(1.1rem, 3vw, 1.35rem)',
-                    fontWeight: 800,
-                    position: 'relative',
-                    zIndex: 2,
-                    letterSpacing: '0.5px',
-                  }}
-                >
-                  {feature.title}
-                </h3>
-
-                <div
-                  style={{
-                    height: '3px',
-                    width: '40px',
-                    background: feature.gradient,
-                    marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
-                    borderRadius: '2px',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                ></div>
-
-                <p
-                  style={{
-                    color: '#1a1a1a',
-                    lineHeight: '1.8',
-                    fontSize: 'clamp(0.95rem, 2.5vw, 1rem)',
-                    position: 'relative',
-                    zIndex: 2,
-                    flex: 1,
-                    fontWeight: 500,
-                  }}
-                >
-                  {feature.description}
-                </p>
-
-                <a
-                  href="#"
-                  style={{
-                    marginTop: 'clamp(1.25rem, 3vw, 1.75rem)',
-                    color: '#000000',
-                    textDecoration: 'none',
-                    fontWeight: 700,
-                    fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                    position: 'relative',
-                    zIndex: 2,
-                    transition: 'all 0.3s ease',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                  }}
-                  onClick={(e) => e.preventDefault()}
-                  onMouseEnter={(e) => {
-                    gsap.to(e.target, {
-                      x: 5,
-                      duration: 0.3,
-                      ease: 'power2.out',
-                    });
-                  }}
-                  onMouseLeave={(e) => {
-                    gsap.to(e.target, {
-                      x: 0,
-                      duration: 0.3,
-                      ease: 'power2.out',
-                    });
-                  }}
-                >
-                  Learn More <span>→</span>
-                </a>
-              </div>
-            ))}
+            {feature.icon}
           </div>
+
+          <h3
+            style={{
+              marginBottom: 'clamp(0.75rem, 2vw, 1rem)',
+              color: '#000000',
+              fontSize: 'clamp(1.1rem, 3vw, 1.35rem)',
+              fontWeight: 800,
+              letterSpacing: '0.5px',
+            }}
+          >
+            {feature.title}
+          </h3>
+
+          <div
+            style={{
+              height: '3px',
+              width: '40px',
+              background: feature.gradient,
+              marginBottom: 'clamp(1rem, 2vw, 1.5rem)',
+              borderRadius: '2px',
+            }}
+          ></div>
+
+          <p
+            style={{
+              color: '#1a1a1a',
+              lineHeight: '1.8',
+              fontSize: 'clamp(0.95rem, 2.5vw, 1rem)',
+              flex: 1,
+              fontWeight: 500,
+            }}
+          >
+            {feature.description}
+          </p>
+
+          <a
+            href="#"
+            style={{
+              marginTop: 'clamp(1.25rem, 3vw, 1.75rem)',
+              color: '#000000',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+            }}
+            onClick={(e) => e.preventDefault()}
+          >
+            Learn More <span>→</span>
+          </a>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Stats Section - Animated Counters */}
       <StatsCounter />
