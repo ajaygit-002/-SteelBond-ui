@@ -9,7 +9,7 @@ const Innovation = () => {
   useEffect(() => {
     gsap.from('.innovation-card', {
       y: 80,
-      opacity: 0,
+      // opacity: 0,
       duration: 1,
       stagger: 0.2,
       scrollTrigger: {

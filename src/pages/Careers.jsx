@@ -9,7 +9,7 @@ const Careers = () => {
   useEffect(() => {
     gsap.from('.job-card', {
       y: 80,
-      opacity: 0,
+      // opacity: 0,
       duration: 1,
       stagger: 0.15,
       scrollTrigger: {

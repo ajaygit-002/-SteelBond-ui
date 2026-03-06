@@ -10,7 +10,7 @@ const CookiePolicy = () => {
     // Animate content sections on scroll
     gsap.from(".cookie-section", {
       y: 50,
-      opacity: 0,
+      // opacity: 0,
       duration: 0.8,
       stagger: 0.2,
       scrollTrigger: {

@@ -13,7 +13,7 @@ const Sitemap = () => {
     // Animate section headers
     gsap.from(".sitemap-section-title", {
       y: 30,
-      opacity: 0,
+      // opacity: 0,
       duration: 0.6,
       stagger: 0.15,
       scrollTrigger: {
