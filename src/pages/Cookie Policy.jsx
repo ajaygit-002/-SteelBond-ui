@@ -11,7 +11,7 @@ const CookiePolicy = () => {
 
     gsap.from(".flow-card", {
       y: 50,
-      opacity: 0,
+      // opacity: 0,
       duration: 0.8,
       stagger: 0.2,
       ease: "power3.out",

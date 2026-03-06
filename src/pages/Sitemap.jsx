@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../components/Footer";
@@ -7,234 +6,190 @@ import Footer from "../components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const Sitemap = () => {
-  const navigate = useNavigate();
 
   useEffect(() => {
-    // Animate section headers
-    gsap.from(".sitemap-section-title", {
-      y: 30,
+
+    gsap.from(".sitemap-card", {
+      y: 40,
       // opacity: 0,
-      duration: 0.6,
-      stagger: 0.15,
+      duration: 0.8,
+      stagger: 0.2,
       scrollTrigger: {
-        trigger: ".sitemap-section-title",
+        trigger: ".sitemap-card",
         start: "top 85%",
       },
     });
 
-    // Animate link items
-    gsap.from(".sitemap-link", {
-      x: -20,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.05,
+    gsap.from(".map-section", {
+      y: 40,
+      // opacity: 0,
+      duration: 0.8,
       scrollTrigger: {
-        trigger: ".sitemap-link",
+        trigger: ".map-section",
         start: "top 85%",
       },
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
   }, []);
-
-  const links = {
-    "Main Pages": [
-      { name: "Home", path: "/" },
-      { name: "About Us", path: "/about" },
-      { name: "Products", path: "/products" },
-      { name: "Innovation", path: "/innovation" },
-      { name: "Resources", path: "/resources" },
-    ],
-    "Company": [
-      { name: "Careers", path: "/careers" },
-      { name: "Contact Us", path: "/contact" },
-      { name: "Explore More", path: "/explore-more" },
-      { name: "Learn More", path: "/learn-more" },
-    ],
-    "Legal & Policy": [
-      { name: "Privacy Policy", path: "/privacy-policy" },
-      { name: "Terms of Service", path: "/terms-of-service" },
-      { name: "Cookie Policy", path: "/cookie-policy" },
-      { name: "Sitemap", path: "/sitemap" },
-    ],
-  };
 
   return (
     <>
-    <div style={styles.container}>
-      <h1 style={styles.title}>Sitemap</h1>
-      <p style={styles.description}>
-        Welcome to the SteelBond Wires sitemap. This page provides an overview of all the pages and content available on our website, helping you navigate efficiently.
-      </p>
+      <div style={styles.container}>
 
-      <div style={styles.gridContainer}>
-        {Object.entries(links).map(([category, items]) => (
-          <div key={category} style={styles.section}>
-            <h2 style={styles.sectionTitle} className="sitemap-section-title">
-              {category}
-            </h2>
-            <ul style={styles.list}>
-              {items.map((item) => (
-                <li key={item.path} style={styles.listItem} className="sitemap-link">
-                  <a
-                    href={item.path}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigate(item.path);
-                    }}
-                    style={styles.link}
-                    onMouseEnter={(e) => {
-                      e.target.style.color = "#1a1a1a";
-                      e.target.style.paddingLeft = "10px";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.color = "#475569";
-                      e.target.style.paddingLeft = "0";
-                    }}
-                  >
-                    → {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <h1 style={styles.title}>Website Sitemap</h1>
+
+        {/* Company Details */}
+
+        <div style={styles.gridContainer}>
+
+          <div className="sitemap-card" style={styles.card}>
+            <h2 style={styles.cardTitle}>About SteelBond Wires</h2>
+
+            <p style={styles.cardText}>
+              SteelBond Wires is dedicated to delivering high-quality wire
+              solutions designed for durability, strength, and reliability.
+              Our products are engineered to meet modern industrial
+              requirements across infrastructure, construction, and
+              manufacturing sectors.
+            </p>
+
+            <p style={styles.cardText}>
+              With a focus on innovation and precision manufacturing,
+              SteelBond Wires aims to provide dependable wire products that
+              support long-term structural performance and safety.
+            </p>
           </div>
-        ))}
+
+          <div className="sitemap-card" style={styles.card}>
+            <h2 style={styles.cardTitle}>Our Mission</h2>
+
+            <p style={styles.cardText}>
+              Our mission is to supply superior wire products that meet the
+              highest industry standards while ensuring customer satisfaction,
+              sustainability, and continuous innovation in manufacturing.
+            </p>
+          </div>
+
+          <div className="sitemap-card" style={styles.card}>
+            <h2 style={styles.cardTitle}>Our Vision</h2>
+
+            <p style={styles.cardText}>
+              We strive to become a trusted name in the wire manufacturing
+              industry by delivering reliable solutions, maintaining product
+              excellence, and building long-term partnerships with our
+              customers and industry stakeholders.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Company Location */}
+
+        <div className="map-section" style={styles.mapContainer}>
+
+          <h2 style={styles.mapTitle}>Company Location</h2>
+
+          <p style={styles.mapText}>
+            SteelBond Wires operates from Tamil Nadu, India. The map below
+            shows the approximate location of our operations and business
+            presence.
+          </p>
+
+          <div style={styles.mapWrapper}>
+            <iframe
+              title="SteelBond Location"
+              src="https://maps.google.com/maps?q=karur%20tamil%20nadu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              style={styles.map}
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+
       </div>
 
-      <div style={styles.infoBox}>
-        <h3 style={styles.infoTitle}>Website Statistics</h3>
-        <p style={styles.infoText}>
-          This sitemap contains all major sections and pages of the SteelBond Wires website. For a detailed XML sitemap for search engines, please visit our robots.txt file.
-        </p>
-      </div>
-
-      <div style={styles.contactBox}>
-        <h3 style={styles.contactTitle}>Need Help Navigating?</h3>
-        <p style={styles.contactText}>
-          If you can't find what you're looking for, please feel free to{" "}
-          <a
-            href="/contact"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/contact");
-            }}
-            style={styles.contactLink}
-          >
-            contact us
-          </a>
-          . Our team is here to assist you.
-        </p>
-      </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
 
 const styles = {
-  container: {
-    maxWidth: "900px",
-    margin: "0 auto",
-    padding: "clamp(20px, 5vw, 40px)",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    lineHeight: "1.8",
-    color: "#1a1a1a",
-    backgroundColor: "#ffffff",
-    minHeight: "100vh",
-  },
-  title: {
-    fontSize: "clamp(2rem, 5vw, 3rem)",
-    fontWeight: "800",
-    marginBottom: "clamp(15px, 3vw, 20px)",
-    background: "linear-gradient(135deg, #1a1a1a, #9ca3af)",
-    backgroundClip: "text",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  },
-  description: {
-    fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-    color: "#475569",
-    marginBottom: "clamp(25px, 5vw, 40px)",
-    lineHeight: "1.8",
-  },
-  gridContainer: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-    gap: "clamp(25px, 5vw, 35px)",
-    marginBottom: "clamp(35px, 7vw, 50px)",
-  },
-  section: {
-    padding: "clamp(20px, 4vw, 30px)",
-    backgroundColor: "#f9fafb",
-    borderRadius: "12px",
-    border: "1px solid #e2e8f0",
-    transition: "all 0.3s ease",
-  },
-  sectionTitle: {
-    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
-    fontWeight: "700",
-    marginBottom: "clamp(15px, 3vw, 20px)",
-    color: "#1a1a1a",
-  },
-  list: {
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-  },
-  listItem: {
-    marginBottom: "clamp(8px, 2vw, 12px)",
-  },
-  link: {
-    color: "#475569",
-    textDecoration: "none",
-    fontSize: "clamp(0.9rem, 1.5vw, 1rem)",
-    transition: "all 0.3s ease",
-    display: "inline-block",
-  },
-  infoBox: {
-    padding: "clamp(20px, 4vw, 30px)",
-    backgroundColor: "#f0f9ff",
-    borderLeft: "4px solid #1a1a1a",
-    borderRadius: "8px",
-    marginBottom: "clamp(20px, 4vw, 30px)",
-  },
-  infoTitle: {
-    fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
-    fontWeight: "700",
-    marginBottom: "clamp(10px, 2vw, 15px)",
-    color: "#1a1a1a",
-  },
-  infoText: {
-    fontSize: "clamp(0.9rem, 1.5vw, 1rem)",
-    color: "#475569",
-    lineHeight: "1.8",
-  },
-  contactBox: {
-    padding: "clamp(20px, 4vw, 30px)",
-    backgroundColor: "#f5f5f5",
-    borderRadius: "12px",
-    border: "1px solid #e0e0e0",
-    textAlign: "center",
-  },
-  contactTitle: {
-    fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
-    fontWeight: "700",
-    marginBottom: "clamp(10px, 2vw, 15px)",
-    color: "#1a1a1a",
-  },
-  contactText: {
-    fontSize: "clamp(0.9rem, 1.5vw, 1rem)",
-    color: "#475569",
-    lineHeight: "1.8",
-  },
-  contactLink: {
-    color: "#1a1a1a",
-    textDecoration: "none",
-    fontWeight: "600",
-    transition: "all 0.3s ease",
-  },
+
+container:{
+maxWidth:"1100px",
+margin:"0 auto",
+padding:"clamp(20px,5vw,40px)",
+fontFamily:"Segoe UI, sans-serif",
+lineHeight:"1.8",
+color:"#1a1a1a",
+background:"#ffffff",
+minHeight:"100vh"
+},
+
+title:{
+fontSize:"clamp(2rem,5vw,3rem)",
+fontWeight:"800",
+marginBottom:"40px",
+background:"linear-gradient(135deg,#1a1a1a,#9ca3af)",
+WebkitBackgroundClip:"text",
+WebkitTextFillColor:"transparent"
+},
+
+gridContainer:{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",
+gap:"30px",
+marginBottom:"50px"
+},
+
+card:{
+padding:"30px",
+background:"#f9fafb",
+borderRadius:"12px",
+border:"1px solid #e5e7eb",
+transition:"all 0.3s ease"
+},
+
+cardTitle:{
+fontSize:"1.4rem",
+fontWeight:"700",
+marginBottom:"15px"
+},
+
+cardText:{
+color:"#475569",
+fontSize:"0.95rem"
+},
+
+mapContainer:{
+marginTop:"40px"
+},
+
+mapTitle:{
+fontSize:"1.5rem",
+fontWeight:"700",
+marginBottom:"10px"
+},
+
+mapText:{
+color:"#475569",
+marginBottom:"20px"
+},
+
+mapWrapper:{
+width:"100%",
+height:"350px",
+borderRadius:"10px",
+overflow:"hidden",
+border:"1px solid #e5e7eb"
+},
+
+map:{
+width:"100%",
+height:"100%",
+border:"0"
+}
+
 };
 
 export default Sitemap;

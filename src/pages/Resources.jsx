@@ -9,7 +9,7 @@ const Resources = () => {
   useEffect(() => {
     gsap.from('.resource-item', {
       x: -50,
-      opacity: 0,
+      // opacity: 0,
       duration: 0.8,
       stagger: 0.1,
       scrollTrigger: {
@@ -204,7 +204,7 @@ const Resources = () => {
               >
                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📖</div>
                 <h3 style={{ marginBottom: '0.5rem' }}>Wire Selection Guide</h3>
-                <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>Complete guide to choosing the right wire for any application</p>
+                <p style={{ fontSize: '0.9rem',  }}>Complete guide to choosing the right wire for any application</p>
               </div>
               <div>
                 <h3 style={{ color: '#111111', marginBottom: '1rem', fontSize: '1.3rem' }}>How to Choose the Right Wire</h3>
