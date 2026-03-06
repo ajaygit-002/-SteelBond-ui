@@ -410,12 +410,12 @@ const Footer = () => {
                 transition: 'all 0.3s ease',
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = '#111111';
-                e.target.style.backgroundColor = 'rgba(15, 23, 42, 0.8)';
+                e.target.style.borderColor = '#ada8a8';
+                e.target.style.backgroundColor = 'rgba(210, 214, 221, 0.8)';
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = 'rgba(0, 0, 0, 0.12)';
-                e.target.style.backgroundColor = 'rgba(15, 23, 42, 0.5)';
+                e.target.style.borderColor = 'rgba(228, 220, 220, 0.12)';
+                e.target.style.backgroundColor = 'rgba(203, 207, 215, 0.5)';
               }}
             />
             <button

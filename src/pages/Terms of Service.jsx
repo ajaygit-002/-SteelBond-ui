@@ -6,134 +6,349 @@ import Footer from "../components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const TermsOfService = () => {
+
   useEffect(() => {
-    // Animate content sections on scroll
-    gsap.from(".terms-section", {
-      y: 50,
+
+    gsap.from(".terms-card", {
+      y: 60,
       // opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
+      duration: 0.9,
+      stagger: 0.15,
+      ease: "power3.out",
       scrollTrigger: {
-        trigger: ".terms-section",
-        start: "top 80%",
-      },
+        trigger: ".terms-grid",
+        start: "top 85%",
+      }
     });
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
+
   }, []);
 
   return (
     <>
-    <div style={styles.container}>
-      <h1 style={styles.title} className="terms-section">Terms of Service</h1>
-      <p style={styles.text} className="terms-section">
-        These Terms of Service ("Terms") govern your use of the SteelBond Wires website and services. By accessing or using our website, you agree to be bound by these Terms. If you do not agree to any part of these Terms, you may not use our website.
-      </p>
+    
+    {/* HERO */}
+    <section style={styles.hero}>
 
-      <h2 style={styles.subtitle} className="terms-section">1. Use License</h2>
-      <p style={styles.text} className="terms-section">
-        Permission is granted to temporarily download one copy of the materials (information or software) on SteelBond Wires' website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
-      </p>
-      <ul style={styles.list} className="terms-section">
-        <li>Modify or copy the materials</li>
-        <li>Use the materials for any commercial purpose or for any public display</li>
-        <li>Attempt to decompile or reverse engineer any software contained on the website</li>
-        <li>Remove any copyright or other proprietary notations from the materials</li>
-        <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
-      </ul>
+      <img
+        src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85"
+        alt="Terms policy"
+        style={styles.heroImage}
+      />
 
-      <h2 style={styles.subtitle} className="terms-section">2. Disclaimer</h2>
-      <p style={styles.text} className="terms-section">
-        The materials on SteelBond Wires' website are provided on an 'as is' basis. SteelBond Wires makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
-      </p>
+      <div style={styles.overlay}>
+        <h1 style={styles.heroTitle}>Terms of Service</h1>
 
-      <h2 style={styles.subtitle} className="terms-section">3. Limitations</h2>
-      <p style={styles.text} className="terms-section">
-        In no event shall SteelBond Wires or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on SteelBond Wires' website.
-      </p>
+        <p style={styles.heroText}>
+          These Terms of Service outline the rules and regulations for using
+          the SteelBond Wires website and services.
+        </p>
+      </div>
 
-      <h2 style={styles.subtitle} className="terms-section">4. Accuracy of Materials</h2>
-      <p style={styles.text} className="terms-section">
-        The materials appearing on SteelBond Wires' website could include technical, typographical, or photographic errors. SteelBond Wires does not warrant that any of the materials on its website are accurate, complete, or current. SteelBond Wires may make changes to the materials contained on its website at any time without notice.
-      </p>
+    </section>
 
-      <h2 style={styles.subtitle} className="terms-section">5. Links</h2>
-      <p style={styles.text} className="terms-section">
-        SteelBond Wires has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by SteelBond Wires of the site. Use of any such linked website is at the user's own risk.
-      </p>
 
-      <h2 style={styles.subtitle} className="terms-section">6. Modifications</h2>
-      <p style={styles.text} className="terms-section">
-        SteelBond Wires may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
-      </p>
 
-      <h2 style={styles.subtitle} className="terms-section">7. Governing Law</h2>
-      <p style={styles.text} className="terms-section">
-        These terms and conditions are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
-      </p>
+    {/* CONTENT */}
+    <section style={styles.section}>
 
-      <h2 style={styles.subtitle} className="terms-section">Contact Us</h2>
-      <address style={styles.address} className="terms-section">
-        SteelBond Wires<br />
-        Email: info@steelbondwires.com<br />
-        Phone: +91 XXXXX XXXXX<br />
-        Location: Tamil Nadu, India
-      </address>
-    </div>
+      <div style={styles.container}>
+
+        <div className="terms-grid" style={styles.grid}>
+
+          {/* INTRO */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+              alt="agreement"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Introduction</h3>
+
+            <p style={styles.text}>
+              These Terms govern your access and use of the SteelBond Wires
+              website. By accessing our website, you agree to comply with
+              these terms and all applicable laws.
+            </p>
+
+          </div>
+
+
+          {/* USE LICENSE */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f"
+              alt="license"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Use License</h3>
+
+            <ul style={styles.list}>
+              <li>Materials may be used for personal viewing only</li>
+              <li>Content cannot be copied or modified</li>
+              <li>Commercial usage is prohibited</li>
+              <li>Reverse engineering of software is not allowed</li>
+              <li>Copyright notices must remain intact</li>
+            </ul>
+
+          </div>
+
+
+          {/* DISCLAIMER */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              alt="disclaimer"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Disclaimer</h3>
+
+            <p style={styles.text}>
+              The materials on the SteelBond Wires website are provided
+              "as is". We do not guarantee completeness, accuracy,
+              reliability or availability of the content.
+            </p>
+
+          </div>
+
+
+          {/* LIMITATIONS */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+              alt="limitations"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Limitations</h3>
+
+            <p style={styles.text}>
+              SteelBond Wires shall not be liable for any damages
+              including data loss, profit loss, or business interruption
+              resulting from website usage.
+            </p>
+
+          </div>
+
+
+          {/* ACCURACY */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              alt="accuracy"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Accuracy of Information</h3>
+
+            <p style={styles.text}>
+              Website content may include technical or typographical
+              errors. SteelBond Wires may update content without notice.
+            </p>
+
+          </div>
+
+
+          {/* LINKS */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
+              alt="external links"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>External Links</h3>
+
+            <p style={styles.text}>
+              Our website may contain links to third-party websites.
+              SteelBond Wires is not responsible for the content or
+              privacy practices of those websites.
+            </p>
+
+          </div>
+
+
+          {/* MODIFICATIONS */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+              alt="policy updates"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Modifications</h3>
+
+            <p style={styles.text}>
+              SteelBond Wires may revise these Terms at any time
+              without prior notice. Continued use of the website
+              means acceptance of the updated Terms.
+            </p>
+
+          </div>
+
+
+          {/* GOVERNING LAW */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f"
+              alt="law"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Governing Law</h3>
+
+            <p style={styles.text}>
+              These terms are governed by the laws of India and any
+              disputes shall fall under the jurisdiction of Indian courts.
+            </p>
+
+          </div>
+
+
+          {/* CONTACT */}
+          <div className="terms-card" style={styles.card}>
+
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
+              alt="contact"
+              style={styles.image}
+            />
+
+            <h3 style={styles.title}>Contact Us</h3>
+
+            <p style={styles.text}>
+              SteelBond Wires<br/>
+              Email: info@steelbondwires.com<br/>
+              Phone: +91 XXXXX XXXXX<br/>
+              Location: Tamil Nadu, India
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
     <Footer />
+
     </>
   );
 };
 
+
 const styles = {
-  container: {
-    maxWidth: "800px",
-    margin: "0 auto",
-    padding: "clamp(20px, 5vw, 40px)",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    lineHeight: "1.8",
-    color: "#1a1a1a",
-    backgroundColor: "#ffffff",
-    minHeight: "100vh",
-  },
-  title: {
-    fontSize: "clamp(2rem, 5vw, 3rem)",
-    fontWeight: "800",
-    marginBottom: "clamp(20px, 4vw, 30px)",
-    background: "linear-gradient(135deg, #1a1a1a, #9ca3af)",
-    backgroundClip: "text",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  },
-  subtitle: {
-    fontSize: "clamp(1.3rem, 4vw, 1.8rem)",
-    fontWeight: "700",
-    marginTop: "clamp(25px, 5vw, 35px)",
-    marginBottom: "clamp(12px, 2vw, 18px)",
-    color: "#1a1a1a",
-  },
-  text: {
-    fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-    marginBottom: "clamp(15px, 3vw, 20px)",
-    lineHeight: "1.8",
-    color: "#475569",
-  },
-  list: {
-    paddingLeft: "clamp(20px, 5vw, 30px)",
-    marginBottom: "clamp(15px, 3vw, 25px)",
-    listStyle: "disc",
-  },
-  address: {
-    fontStyle: "normal",
-    lineHeight: "1.8",
-    backgroundColor: "#f5f5f5",
-    padding: "clamp(15px, 4vw, 25px)",
-    borderRadius: "8px",
-    border: "1px solid #e2e8f0",
-    fontSize: "clamp(0.95rem, 2vw, 1rem)",
-  },
+
+hero:{
+position:"relative",
+height:"clamp(260px,40vw,420px)",
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+overflow:"hidden"
+},
+
+heroImage:{
+position:"absolute",
+width:"100%",
+height:"100%",
+objectFit:"cover"
+},
+
+overlay:{
+position:"absolute",
+inset:0,
+background:"rgba(0,0,0,0.65)",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+textAlign:"center",
+padding:"20px"
+},
+
+heroTitle:{
+fontSize:"clamp(2.2rem,5vw,3.2rem)",
+fontWeight:"800",
+color:"#fff",
+marginBottom:"12px"
+},
+
+heroText:{
+maxWidth:"650px",
+color:"#e2e8f0",
+fontSize:"clamp(0.95rem,2vw,1.15rem)"
+},
+
+section:{
+background:"#f8fafc",
+padding:"clamp(3rem,6vw,5rem) 0"
+},
+
+container:{
+maxWidth:"1200px",
+margin:"0 auto",
+padding:"0 clamp(1rem,3vw,2rem)"
+},
+
+grid:{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",
+gap:"clamp(1.5rem,3vw,2.5rem)"
+},
+
+card:{
+background:"#ffffff",
+padding:"clamp(1.5rem,3vw,2rem)",
+borderRadius:"12px",
+boxShadow:"0 8px 25px rgba(0,0,0,0.08)",
+transition:"all 0.35s ease",
+border:"1px solid rgba(0,0,0,0.06)"
+},
+
+image:{
+width:"100%",
+height:"180px",
+objectFit:"cover",
+borderRadius:"8px",
+marginBottom:"15px"
+},
+
+title:{
+fontSize:"clamp(1.1rem,2vw,1.35rem)",
+fontWeight:"700",
+marginBottom:"10px",
+color:"#111827"
+},
+
+text:{
+color:"#475569",
+lineHeight:"1.7",
+fontSize:"clamp(0.9rem,1.6vw,0.96rem)"
+},
+
+list:{
+paddingLeft:"18px",
+lineHeight:"1.8",
+color:"#475569"
+}
+
 };
 
 export default TermsOfService;

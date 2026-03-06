@@ -10,15 +10,15 @@ const PrivacyPolicy = () => {
   useEffect(() => {
 
     gsap.from(".privacy-card", {
-      y: 40,
+      y: 60,
       // opacity: 0,
-      duration: 0.8,
+      duration: 0.9,
       stagger: 0.15,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".privacy-grid",
         start: "top 85%",
-      },
+      }
     });
 
     return () => {
@@ -29,7 +29,8 @@ const PrivacyPolicy = () => {
 
   return (
     <>
-      {/* HERO */}
+
+      {/* HERO SECTION */}
       <section style={styles.hero}>
 
         <img
@@ -38,195 +39,157 @@ const PrivacyPolicy = () => {
           style={styles.heroImage}
         />
 
-        <div style={styles.heroOverlay}>
+        <div style={styles.overlay}>
           <h1 style={styles.heroTitle}>Privacy Policy</h1>
 
           <p style={styles.heroText}>
-            Protecting your information is our priority at SteelBond Wires.
+            SteelBond Wires respects your privacy and ensures that your
+            personal information is protected with the highest standards.
           </p>
         </div>
 
       </section>
 
 
-      {/* GRID CONTENT */}
-      <div style={styles.container}>
+      {/* CONTENT SECTION */}
+      <section style={styles.section}>
 
-        <div className="privacy-grid" style={styles.grid}>
+        <div style={styles.container}>
 
-          {/* INTRO */}
-          <div className="privacy-card" style={styles.card}>
-
-            <img
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
-              alt="data protection"
-              style={styles.image}
-            />
-
-            <h2 style={styles.subtitle}>Introduction</h2>
-
-            <p style={styles.text}>
-              SteelBond Wires respects your privacy and is committed to protecting
-              the personal information you provide when using our website.
-              This Privacy Policy explains how we collect, use and safeguard
-              your information.
-            </p>
-
-          </div>
+          <div className="privacy-grid" style={styles.grid}>
 
 
-          {/* INFORMATION */}
-          <div className="privacy-card" style={styles.card}>
+            {/* INTRODUCTION */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Introduction</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-              alt="information collection"
-              style={styles.image}
-            />
+              <p style={styles.text}>
+                At SteelBond Wires, protecting customer data and maintaining
+                transparency in how information is handled is a core value.
+              </p>
 
-            <h2 style={styles.subtitle}>Information We Collect</h2>
-
-            <ul style={styles.list}>
-              <li style={styles.listItem}>Full Name</li>
-              <li style={styles.listItem}>Email Address</li>
-              <li style={styles.listItem}>Phone Number</li>
-              <li style={styles.listItem}>Company Name</li>
-              <li style={styles.listItem}>Inquiry details</li>
-              <li style={styles.listItem}>Device and browser information</li>
-              <li style={styles.listItem}>IP address</li>
-            </ul>
-
-          </div>
+              <p style={styles.text}>
+                This Privacy Policy explains how we collect, store and use
+                information provided by visitors when using our website.
+              </p>
+            </div>
 
 
-          {/* USAGE */}
-          <div className="privacy-card" style={styles.card}>
+            {/* INFORMATION */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Information We Collect</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
-              alt="business communication"
-              style={styles.image}
-            />
-
-            <h2 style={styles.subtitle}>How We Use Your Information</h2>
-
-            <ul style={styles.list}>
-              <li style={styles.listItem}>Respond to customer inquiries</li>
-              <li style={styles.listItem}>Provide product information</li>
-              <li style={styles.listItem}>Improve website performance</li>
-              <li style={styles.listItem}>Maintain internal records</li>
-              <li style={styles.listItem}>Send business updates</li>
-            </ul>
-
-          </div>
+              <ul style={styles.list}>
+                <li>Full name and contact details</li>
+                <li>Email address</li>
+                <li>Phone number</li>
+                <li>Company information</li>
+                <li>Product inquiries</li>
+                <li>Browser and device information</li>
+                <li>IP address and website activity</li>
+              </ul>
+            </div>
 
 
-          {/* SECURITY */}
-          <div className="privacy-card" style={styles.card}>
+            {/* USE */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>How We Use Your Information</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
-              alt="data security"
-              style={styles.image}
-            />
-
-            <h2 style={styles.subtitle}>Data Protection</h2>
-
-            <p style={styles.text}>
-              SteelBond Wires implements industry-standard security practices
-              to safeguard your personal information from unauthorized access,
-              misuse, loss or alteration.
-            </p>
-
-          </div>
+              <ul style={styles.list}>
+                <li>Respond to inquiries</li>
+                <li>Provide product quotations</li>
+                <li>Improve website performance</li>
+                <li>Enhance customer experience</li>
+                <li>Maintain internal records</li>
+                <li>Send updates regarding services</li>
+              </ul>
+            </div>
 
 
-          {/* COOKIES */}
-          <div className="privacy-card" style={styles.card}>
+            {/* SECURITY */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Data Protection</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
-              alt="cookies tracking"
-              style={styles.image}
-            />
+              <p style={styles.text}>
+                SteelBond Wires uses industry-standard security practices
+                to protect information from unauthorized access, loss,
+                misuse or alteration.
+              </p>
 
-            <h2 style={styles.subtitle}>Cookies</h2>
-
-            <p style={styles.text}>
-              Our website may use cookies to improve website functionality,
-              analyze traffic and enhance your browsing experience.
-            </p>
-
-          </div>
+              <p style={styles.text}>
+                Our systems ensure secure storage and safe handling
+                of sensitive information.
+              </p>
+            </div>
 
 
-          {/* THIRD PARTY */}
-          <div className="privacy-card" style={styles.card}>
+            {/* COOKIES */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Cookies Policy</h3>
 
-            <img
-              src="https://imgs.search.brave.com/FK8l0FgIa8iT8w0MEUIihh3FCADq5a6uSVmKwPfJhcc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA2LzU5LzcxLzUz/LzM2MF9GXzY1OTcx/NTM2Ml9odENOR1hP/cHFCNVpERW1XS0Fl/bno5eHRYS2RWY283/Sy5qcGc"
-              alt="third party links"
-              style={styles.image}
-            />
+              <p style={styles.text}>
+                Our website may use cookies to enhance functionality
+                and analyze visitor behavior to improve user experience.
+              </p>
 
-            <h2 style={styles.subtitle}>Third-Party Links</h2>
-
-            <p style={styles.text}>
-              Our website may contain links to external websites.
-              SteelBond Wires is not responsible for the privacy
-              practices of third-party websites.
-            </p>
-
-          </div>
+              <p style={styles.text}>
+                You may disable cookies in your browser settings
+                if preferred.
+              </p>
+            </div>
 
 
-          {/* RIGHTS */}
-          <div className="privacy-card" style={styles.card}>
+            {/* THIRD PARTY */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Third-Party Links</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-              alt="user rights"
-              style={styles.image}
-            />
+              <p style={styles.text}>
+                Our website may contain links to external websites.
+              </p>
 
-            <h2 style={styles.subtitle}>Your Rights</h2>
-
-            <ul style={styles.list}>
-              <li style={styles.listItem}>Access your personal information</li>
-              <li style={styles.listItem}>Request correction</li>
-              <li style={styles.listItem}>Request deletion of data</li>
-            </ul>
-
-          </div>
+              <p style={styles.text}>
+                SteelBond Wires is not responsible for the privacy
+                practices of those third-party websites.
+              </p>
+            </div>
 
 
-          {/* CONTACT */}
-          <div className="privacy-card" style={styles.card}>
+            {/* RIGHTS */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Your Rights</h3>
 
-            <img
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4"
-              alt="contact support"
-              style={styles.image}
-            />
+              <ul style={styles.list}>
+                <li>Access your personal information</li>
+                <li>Request corrections</li>
+                <li>Request deletion of data</li>
+                <li>Withdraw consent where applicable</li>
+              </ul>
+            </div>
 
-            <h2 style={styles.subtitle}>Contact Us</h2>
 
-            <p style={styles.text}>
-              If you have questions regarding this Privacy Policy please contact:
-            </p>
+            {/* CONTACT */}
+            <div className="privacy-card" style={styles.card}>
+              <h3 style={styles.title}>Contact Us</h3>
 
-            <p style={styles.text}>
-              <strong>SteelBond Wires</strong><br/>
-              Email: info@steelbondwires.com<br/>
-              Phone: +91 XXXXX XXXXX<br/>
-              Location: Tamil Nadu, India
-            </p>
+              <p style={styles.text}>
+                If you have questions about this Privacy Policy,
+                please contact us.
+              </p>
+
+              <p style={styles.text}>
+                <strong>SteelBond Wires</strong><br/>
+                Email: info@steelbondwires.com<br/>
+                Phone: +91 XXXXX XXXXX<br/>
+                Location: Tamil Nadu, India
+              </p>
+            </div>
+
 
           </div>
 
         </div>
 
-      </div>
+      </section>
 
       <Footer />
 
@@ -239,136 +202,93 @@ const styles = {
 
   hero: {
     position: "relative",
-    height: "340px",
-    overflow: "hidden",
-    width: "100%",
+    height: "clamp(260px,40vw,420px)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden"
   },
 
   heroImage: {
     position: "absolute",
     width: "100%",
     height: "100%",
-    objectFit: "cover",
-    top: 0,
-    left: 0,
-    zIndex: 1,
+    objectFit: "cover"
   },
 
-  heroOverlay: {
+  overlay: {
     position: "absolute",
     inset: 0,
-    background: "rgba(0, 0, 0, 0.6)",
+    background: "rgba(0,0,0,0.65)",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
     textAlign: "center",
-    padding: "20px",
-    zIndex: 2,
+    padding: "20px"
   },
 
   heroTitle: {
-    fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+    fontSize: "clamp(2rem,5vw,3.2rem)",
     fontWeight: "800",
-    marginBottom: "10px",
-    background: "linear-gradient(180deg, #e5e5e5, #ffffff)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    color: "transparent",
+    color: "#fff",
+    marginBottom: "12px",
+    letterSpacing: "0.5px"
   },
 
   heroText: {
-    fontSize: "clamp(1rem, 2vw, 1.2rem)",
-    color: "#f1f1f1",
-    margin: 0,
+    color: "#e2e8f0",
+    maxWidth: "650px",
+    fontSize: "clamp(0.95rem,2vw,1.15rem)",
+    lineHeight: "1.6"
+  },
+
+  section: {
+    background: "#f8fafc",
+    padding: "clamp(3rem,6vw,5rem) 0"
   },
 
   container: {
-    maxWidth: "1200px",
+    maxWidth: "1250px",
     margin: "0 auto",
-    padding: "clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem)",
-    width: "100%",
-    boxSizing: "border-box",
-    position: "relative",
-    zIndex: 10,
-    visibility: "visible",
-    opacity: 1,
+    padding: "0 clamp(1rem,3vw,2rem)"
   },
 
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(clamp(260px, 80vw, 320px), 1fr))",
-    gap: "clamp(1.5rem, 3vw, 2.5rem)",
-    width: "100%",
-    margin: "0 auto",
-    position: "relative",
-    zIndex: 10,
-    visibility: "visible",
-    opacity: 1,
+    gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
+    gap: "clamp(1.5rem,3vw,2.2rem)"
   },
 
   card: {
     background: "#ffffff",
-    borderRadius: "clamp(8px, 3vw, 14px)",
-    padding: "clamp(1.5rem, 4vw, 2.5rem)",
-    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.1)",
-    transition: "all 0.3s ease",
-    cursor: "pointer",
-    position: "relative",
-    overflow: "visible",
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    minHeight: "auto",
-    border: "1.5px solid rgba(0, 0, 0, 0.06)",
-    zIndex: 5,
-    visibility: "visible",
-    opacity: 1,
+    padding: "clamp(1.5rem,3vw,2rem)",
+    borderRadius: "12px",
+    boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+    transition: "all 0.35s ease",
+    border: "1px solid rgba(0,0,0,0.06)"
   },
 
-  image: {
-    width: "100%",
-    height: "clamp(140px, 25vw, 200px)",
-    objectFit: "cover",
-    borderRadius: "clamp(6px, 2vw, 10px)",
-    marginBottom: "clamp(1rem, 2vw, 1.5rem)",
-    display: "block",
-  },
-
-  subtitle: {
-    fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)",
+  title: {
+    fontSize: "clamp(1.1rem,2vw,1.35rem)",
     fontWeight: "700",
-    marginBottom: "clamp(0.75rem, 2vw, 1rem)",
-    color: "#111111",
-    position: "relative",
-    zIndex: 2,
+    marginBottom: "12px",
+    color: "#111827"
   },
 
   text: {
-    fontSize: "clamp(0.9rem, 1.8vw, 1rem)",
-    lineHeight: "1.7",
     color: "#475569",
-    marginBottom: "clamp(0.5rem, 1vw, 0.75rem)",
-    position: "relative",
-    zIndex: 2,
+    lineHeight: "1.7",
+    fontSize: "clamp(0.9rem,1.6vw,0.96rem)",
+    marginBottom: "10px"
   },
 
   list: {
-    paddingLeft: "clamp(1.5rem, 3vw, 2rem)",
-    lineHeight: "1.9",
-    margin: "0",
-    position: "relative",
-    zIndex: 2,
-  },
-
-  listItem: {
-    fontSize: "clamp(0.9rem, 1.8vw, 1rem)",
+    paddingLeft: "18px",
     color: "#475569",
-    marginBottom: "clamp(0.5rem, 1vw, 0.75rem)",
-  },
+    lineHeight: "1.9",
+    fontSize: "clamp(0.9rem,1.6vw,0.95rem)"
+  }
 
 };
 
