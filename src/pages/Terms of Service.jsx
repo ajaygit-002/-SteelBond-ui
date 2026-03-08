@@ -310,24 +310,35 @@ padding:"0 clamp(1rem,3vw,2rem)"
 grid:{
 display:"grid",
 gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",
-gap:"clamp(1.5rem,3vw,2.5rem)"
+gap:"clamp(1.25rem,3vw,2.25rem)",
+alignItems: "stretch"
 },
 
 card:{
 background:"#ffffff",
-padding:"clamp(1.5rem,3vw,2rem)",
+padding:"clamp(1rem,2.5vw,1.5rem)",
 borderRadius:"12px",
 boxShadow:"0 8px 25px rgba(0,0,0,0.08)",
 transition:"all 0.35s ease",
 border:"1px solid rgba(0,0,0,0.06)"
+ ,
+ display: "flex",
+ flexDirection: "column",
+ justifyContent: "flex-start",
+ alignItems: "stretch",
+ height: "100%",
+ boxSizing: "border-box",
+ minHeight: "320px"
 },
 
 image:{
 width:"100%",
-height:"180px",
+height:"clamp(120px,20vw,180px)",
 objectFit:"cover",
 borderRadius:"8px",
 marginBottom:"15px"
+ ,
+ flexShrink: 0
 },
 
 title:{
@@ -340,7 +351,8 @@ color:"#111827"
 text:{
 color:"#475569",
 lineHeight:"1.7",
-fontSize:"clamp(0.9rem,1.6vw,0.96rem)"
+fontSize:"clamp(0.9rem,1.6vw,0.96rem)",
+flexGrow: 1
 },
 
 list:{
