@@ -578,7 +578,7 @@ const Home = () => {
               right: 0,
               width: '140px',
               height: '140px',
-              background: feature.gradient,
+              // background: feature.gradient,
               borderRadius: '50%',
               // opacity: 0.08,
               filter: 'blur(3px)',

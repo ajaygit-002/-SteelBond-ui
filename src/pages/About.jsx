@@ -23,39 +23,56 @@ const About = () => {
     <>
       <div style={{ marginTop: '80px' }}>
         <section
-          className="section"
-          style={{
-            background: '#ffffff',
-          }}
-        >
-          <div className="container">
-            <div
-              className="about-content"
-              style={{
-                maxWidth: '800px',
-                margin: '0 auto',
-              }}
-            >
-              <h1 style={{ fontSize: '3rem', marginBottom: '2rem', color: '#000000' }}>About Us</h1>
-              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: '#000000' }}>
-                SteelBond Wires has been a trusted leader in the wire manufacturing
-                industry for over three decades. Founded with a vision to provide
-                premium, reliable wire solutions, we have grown into a global powerhouse
-                serving industries worldwide.
-              </p>
-              <p style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: '#000000' }}>
-                Our commitment to excellence, innovation, and customer satisfaction
-                has made us the preferred choice for industrial and manufacturing
-                sectors globally.
-              </p>
-              <p style={{ fontSize: '1.125rem', color: '#000000' }}>
-                We combine modern manufacturing techniques with decades of expertise
-                to deliver products that exceed expectations and withstand the most
-                demanding applications.
-              </p>
-            </div>
-          </div>
-        </section>
+  className="section"
+  style={{
+    background: "#ffffff",
+    padding: "clamp(3rem, 6vw, 6rem) 1.5rem",
+  }}
+>
+  <div
+    className="container"
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+    }}
+  >
+    <div
+      className="about-content"
+      style={{
+        maxWidth: "820px",
+        margin: "0 auto",
+        textAlign: "center",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "clamp(2rem, 5vw, 3rem)",
+          fontWeight: "700",
+          marginBottom: "1.8rem",
+          color: "#000000",
+          letterSpacing: "-0.5px",
+        }}
+      >
+        About Us
+      </h1>
+
+      <p
+        style={{
+          fontSize: "clamp(1rem, 2.2vw, 1.15rem)",
+          lineHeight: "1.8",
+          color: "#000000",
+          maxWidth: "720px",
+          margin: "0 auto",
+        }}
+      >
+        SteelBond Wires has been a trusted leader in the wire manufacturing
+        industry for over three decades. Founded with a vision to provide
+        premium and reliable wire solutions, we have grown into a global
+        powerhouse serving industries worldwide.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Values Section */}
         <section className="section" style={{ background: '#f8fafc' }}>

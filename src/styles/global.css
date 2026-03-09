@@ -324,3 +324,26 @@ img {
     padding: 0;
   }
 }
+
+/* About page responsive alignment */
+.about-content {
+  text-align: left;
+}
+.about-content h1 {
+  text-align: left;
+}
+.about-content p {
+  text-align: justify;
+}
+
+@media (max-width: 767px) {
+  .about-content,
+  .about-content h1,
+  .about-content p {
+    text-align: center;
+  }
+
+  .about-content {
+    padding: 0 1rem;
+  }
+}
