@@ -23,56 +23,29 @@ const About = () => {
     <>
       <div style={{ marginTop: '80px' }}>
         <section
-  className="section"
-  style={{
-    background: "#ffffff",
-    padding: "clamp(3rem, 6vw, 6rem) 1.5rem",
-  }}
->
-  <div
-    className="container"
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-    }}
-  >
-    <div
-      className="about-content"
-      style={{
-        maxWidth: "820px",
-        margin: "0 auto",
-        textAlign: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "clamp(2rem, 5vw, 3rem)",
-          fontWeight: "700",
-          marginBottom: "1.8rem",
-          color: "#000000",
-          letterSpacing: "-0.5px",
-        }}
-      >
-        About Us
-      </h1>
-
-      <p
-        style={{
-          fontSize: "clamp(1rem, 2.2vw, 1.15rem)",
-          lineHeight: "1.8",
-          color: "#000000",
-          maxWidth: "720px",
-          margin: "0 auto",
-        }}
-      >
-        SteelBond Wires has been a trusted leader in the wire manufacturing
+          className="section"
+          style={{
+            background: '#ffffff',
+          }}
+        >
+          <div className="container">
+            <h1 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>
+              About Us
+            </h1>
+            <p
+              style={{
+                fontSize: '1.125rem',
+                maxWidth: '800px',
+                marginBottom: '2rem',
+              }}
+            >
+              SteelBond Wires has been a trusted leader in the wire manufacturing
         industry for over three decades. Founded with a vision to provide
         premium and reliable wire solutions, we have grown into a global
         powerhouse serving industries worldwide.
-      </p>
-    </div>
-  </div>
-</section>
+            </p>
+          </div>
+        </section>
 
         {/* Values Section */}
         <section className="section" style={{ background: '#f8fafc' }}>
